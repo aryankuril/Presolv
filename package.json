@@ -2,12 +2,15 @@
   "name": "presolve",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+"scripts": {
+  "dev": "next dev --turbopack",
+  "build": "npx rimraf .next && next build",
+  "start": "next start",
+  "lint": "next lint",
+  "clean": "npx rimraf .next"
+}
+
+,
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",
