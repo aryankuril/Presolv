@@ -40,7 +40,7 @@ export default function Home() {
     <main>
       <section className="relative min-h-screen overflow-hidden">
 
-        <div className="container hero-section relative mx-auto px-4 z-10 h-[967px] max-sm:h-[50vh] content-center">
+        <div className="container hero-section relative mx-auto px-4 z-10 h-[567px] max-sm:h-[50vh] content-center">
           <AnimatedBackground />
           <h1 className="hero-section-title text-center mb-4 animate-fade-in text-5xl md:text-6xl lg:text-7xl">
             Mastering Online
