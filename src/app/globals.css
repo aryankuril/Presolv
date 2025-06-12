@@ -696,7 +696,8 @@ li{
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
+  height: 100%;
   overflow: hidden;
   background-color: black;
   border-radius: 0.75rem;
@@ -784,7 +785,7 @@ li{
 
 .course-module-progress {
   position: absolute;
-  bottom: -30px;
+
   left: 0;
   right: 0;
 }

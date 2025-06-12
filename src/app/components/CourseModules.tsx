@@ -57,7 +57,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
       <section
         ref={sectionRef}
         className="course-module-container relative "
-        style={{ height: `${modules.length * 50}vh` }}
+        style={{ height: `${modules.length * 20}vh` }}
       >
         <div className="container course-module-sticky">
           
@@ -69,7 +69,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
           )}
           <div className="container h-full flex items-center justify-center">
             {/* Main content area */}
-            <div className="flex h-full items-start justify-center px-4 py-10 md:px-8 lg:px-16 w-full max-w-6xl">
+            <div className="flex h-full items-start justify-center px-4 py-10 md:px-2 lg:px-6  max-w-6xl ">
               <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-25 max-w-6xl mx-auto w-full">
                 {/* Left side - Card display that matches the screenshot */}
                 <div className="col-span-1 md:col-span-5 lg:col-span-4 flex justify-center">

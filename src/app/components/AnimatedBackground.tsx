@@ -5,7 +5,7 @@ const AnimatedBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="relative w-full h-full">
-        <div className="absolute left-[2%] sm:left-[5%] md:left-[10%] top-[85%] md:top-[85%] -translate-y-1/2 animate-float-left">
+        <div className="absolute left-[2%] sm:left-[5%] md:left-[6%] top-[85%] md:top-[85%] -translate-y-1/2 animate-float-left">
           <Image
             src="/images/communication-left.svg"
             alt="Communication Left"
@@ -15,7 +15,7 @@ const AnimatedBackground = () => {
             priority
           />
         </div>
-        <div className="absolute right-[2%] sm:right-[5%] md:right-[10%] top-[85%] md:top-[85%] -translate-y-1/2 animate-float-right">
+        <div className="absolute right-[2%] sm:right-[5%] md:right-[6%] top-[85%] md:top-[85%] -translate-y-1/2 animate-float-right">
           <Image
             src="/images/communication-right.svg"
             alt="Communication Right"

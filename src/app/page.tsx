@@ -40,16 +40,16 @@ export default function Home() {
     <main>
       <section className="relative min-h-screen overflow-hidden">
 
-        <div className="container hero-section relative mx-auto px-4 z-10 h-[70vh] max-sm:h-[50vh] content-center">
+        <div className="container hero-section relative mx-auto px-4 z-10 h-[967px] max-sm:h-[50vh] content-center">
           <AnimatedBackground />
-          <h1 className="hero-section-title text-center mb-4 animate-fade-in">
+          <h1 className="hero-section-title text-center mb-4 animate-fade-in text-5xl md:text-6xl lg:text-7xl">
             Mastering Online
             <br />
             Disputes Resolution
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white text-center mb-10 animate-fade-in">
+          <p className="text-white text-center mb-10 animate-fade-in text-xl md:text-2xl">
             Navigating Disputes in the Digital Age with Presolv360
           </p>
 
@@ -82,8 +82,8 @@ export default function Home() {
         </div>
         {/* Inside the Course */}
         <div className="container relative mx-auto py-20 px-20 max-sm:px-10 max-sm:py-10 ">
-          <h2 className="text-white text-center mb-4">Inside the Course</h2>
-          <p className="text-white text-center mb-10">
+          <h2 className="text-white text-center mb-4 text-3xl md:text-4xl">Inside the Course</h2>
+          <p className="text-white text-center mb-10 text-lg md:text-xl">
             Developed by Presolv360 in collaboration with industry experts, this online course offers a dynamic, tech-driven learning experience. Participants explore the evolution from ADR to ODR through real-world case studies,
             engage in masterclasses by leading professionals, and experience an ADR Centre in Virtual Reality. The course includes skill-building sessions in AI-negotiation, e-mediation, and e-arbitration while emphasizing digital communication and ethical considerations in ODR.
           </p>

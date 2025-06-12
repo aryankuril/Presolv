@@ -89,7 +89,7 @@ export default function CourseInsiderPage() {
 
         </div>
 
-        <div className="container grid grid-cols-2 gap-10 px-20 py-20 mt-5 max-sm:grid-cols-1 max-sm:px-5 max-sm:py-5">
+        <div className="container grid grid-cols-2 gap-10 px-20 py-20 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10">
           <div className=''>
             <h2>
               Other Key Proposition
@@ -145,7 +145,7 @@ export default function CourseInsiderPage() {
           </div>
         </div>
 
-      <div className='container  relative grid grid-cols-2 px-50 py-10 gap-10 mt-5 max-sm:grid-cols-1 max-sm:px-5 max-sm:py-5'>
+      <div className='container  relative grid grid-cols-2 px-50 py-10 gap-10 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
 
           <div className='flex flex-col sticky top-20 h-fit max-h-[calc(300vh-80px)] justify-center items-center text-center'>
             <h2>

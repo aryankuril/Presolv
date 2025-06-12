@@ -22,7 +22,7 @@ import bcrypt from 'bcryptjs';
 // 3. Authenticates with backend using the ID token (POST for new users, GET for existing)
 // 4. Stores Firebase token and backend user info in localStorage
 // 5. Handles errors and session management
-// 6. Token refresh is handled by Firebase SDK automaticall
+// 6. Token refresh is handled by Firebase SDK automatically
 
 interface UserData {
   id: string;
@@ -201,43 +201,30 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#0A0A0A]">
-      {/* Left Section - Image */}
-         {/* Left Section - Video */}
-         <div className=" lg:flex lg:w-[55%] relative min-h-[600px]">
+    <div className="min-h-screen flex flex-col md:flex-row items-start justify-center bg-[#0A0A0A] py-8 px-2 gap-8">
+      {/* Video Section - hidden on mobile */}
+      <div className="hidden md:flex w-full max-w-3xl flex-col items-center relative min-h-[300px]">
         <video
           src="/video/Presolve+Teaser.mp4"
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-[240px] md:h-[350px] lg:h-[416px] rounded-lg shadow-lg"
           autoPlay
           muted
           loop
           playsInline
           controls={false}
-          style={{ 
-            marginLeft: "40px",
-            position: 'absolute',
-            top: "50px",
-
-            left : "50px",
-            display: 'block',
-            width: '741.188px',
-            height: '416px',
-            aspectRatio: '741.19/416.00'
-          }}
         >
           <source src="/video/Presolve+Teaser.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute bottom-8 left-8 bg-white/90 p-4 rounded-lg max-w-md">
+        {/* <div className="absolute bottom-4 left-4 bg-white/90 p-4 rounded-lg max-w-md shadow-md">
           <h3 className="text-black text-xl font-semibold">Justice Kannan Krishnamoorthy</h3>
           <p className="text-gray-700">Judge (Retd.) Punjab & Haryana High Court</p>
-        </div>
+        </div> */}
       </div>
 
-      {/* Right Section - Form */}
-      <div className="w-full lg:w-[45%] p-8 lg:p-12 flex flex-col">
-        <div className="flex justify-between items-center mb-12">
-          
+      {/* Form Section */}
+      <div className="w-full max-w-[480px] p-8 flex flex-col items-center justify-center bg-transparent">
+        <div className="flex justify-between items-center mb-12 w-full">
           <div className="flex gap-6">
             <button 
               onClick={() => setActiveTab('login')}
@@ -261,8 +248,7 @@ export default function AuthPage() {
             </button>
           </div>
         </div>
-
-        <div className="flex-grow flex flex-col justify-center max-w-[480px] mx-auto w-full">
+        <div className="flex-grow flex flex-col justify-center w-full">
           {activeTab === 'login' ? (
             <>
               <h1 className="text-[40px] font-bold text-white mb-2">Welcome Back!</h1>
