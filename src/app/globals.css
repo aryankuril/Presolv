@@ -306,7 +306,7 @@ body {
   top: 0.3em;
   width: 1em;
   height: 1em;
-  /* background-image: url('/images/tick-icon.svg'); */
+  background-image: url('/images/tick-icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

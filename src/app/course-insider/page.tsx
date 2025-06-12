@@ -53,7 +53,7 @@ export default function CourseInsiderPage() {
       <CourseModules modules={modules} title="Inside The Course" />
 
       
-        <div className="container odr-course-bg ellipse-bg grid grid-cols-2 gap-10 mx-auto py-15 px-15 mt-40 max-sm:mt-20 max-sm:grid-cols-1 max-sm:px-5 max-sm:py-5 max-sm:gap-3">
+        <div className="container odr-course-bg ellipse-bg grid grid-cols-2 gap-10 mx-auto py-15 px-15  max-sm:mt-20 max-sm:grid-cols-1 max-sm:px-5 max-sm:py-5 max-sm:gap-3">
 
           <div className="">
             <Image src="/images/sign-up-odr-course.jpg" className='rounded-[30px]' alt="ODR Course" width={1000} height={1000} />
