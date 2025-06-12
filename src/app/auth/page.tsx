@@ -22,7 +22,7 @@ import bcrypt from 'bcryptjs';
 // 3. Authenticates with backend using the ID token (POST for new users, GET for existing)
 // 4. Stores Firebase token and backend user info in localStorage
 // 5. Handles errors and session management
-// 6. Token refresh is handled by Firebase SDK automatically
+// 6. Token refresh is handled by Firebase SDK automaticall
 
 interface UserData {
   id: string;
