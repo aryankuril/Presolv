@@ -26,20 +26,33 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
     const handleScroll = () => {
       const section = sectionRef.current;
       if (!section) return;
+      
       const scrollY = window.scrollY + window.innerHeight / 2;
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
+      const sectionBottom = sectionTop + sectionHeight;
 
-      if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
+      if (scrollY > sectionTop && scrollY < sectionBottom) {
+        // Calculate progress within the section
         const progress = (scrollY - sectionTop) / sectionHeight;
-        const idx = Math.min(
-          modules.length - 1,
-          Math.floor(progress * modules.length)
-        );
-        setActiveIndex(idx);
-
-        // Calculate overall progress for the progress bar
-        setScrollProgress(progress * 100);
+        
+        // Only update active index if we haven't reached the last module
+        if (progress < 0.99) { // Using 0.99 to ensure we're very close to the end
+          const idx = Math.min(
+            modules.length - 1,
+            Math.floor(progress * modules.length)
+          );
+          setActiveIndex(idx);
+          setScrollProgress(progress * 100);
+        } else {
+          // When we reach the end, ensure we show the last module
+          setActiveIndex(modules.length - 1);
+          setScrollProgress(100);
+        }
+      } else if (scrollY >= sectionBottom) {
+        // Force the last module to be shown when we're past the section
+        setActiveIndex(modules.length - 1);
+        setScrollProgress(100);
       }
     };
     window.addEventListener('scroll', handleScroll);
