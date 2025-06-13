@@ -75,17 +75,20 @@ export default function CourseInsiderPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+  
     const isMobile = window.innerWidth < 768;
-    if (isMobile) return; // Disable hover logic on mobile
+    if (isMobile) return;
   
     let index = 0;
     const interval = setInterval(() => {
       setHoveredIndex(index);
       index = (index + 1) % propositions.length;
-    }, 2000); // Change every 2 seconds
+    }, 2000);
   
     return () => clearInterval(interval);
   }, []);
+  
   
   return (
     <main className="bg-black text-white min-h-screen">
