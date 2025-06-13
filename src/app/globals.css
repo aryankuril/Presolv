@@ -53,7 +53,6 @@ body {
 
   .course-module-sticky {
     height: 85vh;
-     top: 100px;
   }
 
   .course-module-progress{
@@ -66,7 +65,6 @@ body {
 @media (min-width: 1024px) {
   .course-module-sticky {
     height: 75vh;
-     top: 100px;
   }
   
 
@@ -481,7 +479,7 @@ p{
 
 /* hero heading font */
 h1{
-  /* font-size: var(--h1); */
+  font-size: var(--h1);
   font-family: var(--font-futura-bold);
   line-height: 1.1;
 }
@@ -616,7 +614,7 @@ li{
     transform: translateX(0) translateY(-50%);
   }
   50% {
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-60%) translateY(-50%);
   }
 }
 
@@ -628,7 +626,7 @@ li{
     animation: floatRight 5s ease-in-out infinite;
   }
   .animate-fade-in {
-    animation: fadeIn  5s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
   }
 }
 
@@ -692,12 +690,11 @@ li{
 
 .course-module-sticky {
   position: sticky;
-  top: 100px;
+  top: 40px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 95%;
-  height: 100%;
+  width: 90%;
   overflow: hidden;
   background-color: black;
   border-radius: 0.75rem;
@@ -785,7 +782,7 @@ li{
 
 .course-module-progress {
   position: absolute;
-
+  bottom: -30px;
   left: 0;
   right: 0;
 }
@@ -948,6 +945,5 @@ li{
   width: 100%;
   color: rgba(255, 255, 255, 0.8);
 }
-
 
 

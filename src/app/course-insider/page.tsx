@@ -1,5 +1,5 @@
 'use client';
-
+import { useState, useEffect } from 'react';
 import CourseModules from '@/app/components/CourseModules';
 import Image from 'next/image';
 import React from 'react';
@@ -46,14 +46,52 @@ const modules = [
   },
 ];
 
+const propositions = [
+  {
+    title: 'Internships:',
+    description:
+      'We offer a select group of students a unique 6-week incubation program, providing hands-on experience in Online Dispute Resolution (ODR).',
+  },
+  {
+    title: 'University Offering:',
+    description:
+      'We provide opportunities for a continuous knowledge-sharing framework, ensuring ongoing learning and growth for students.',
+  },
+  {
+    title: 'Scholarships:',
+    description:
+      'We offer merit-based concessions by covering a portion of the course fees for deserving students, subject to the terms of our scholarship program.',
+  },
+  {
+    title: 'Exclusive community:',
+    description:
+      'Course participants will join an exclusive ODR community, gaining access to periodic AMA sessions, job opportunities, a legal-tech innovation lab, and more.',
+  },
+];
+
 export default function CourseInsiderPage() {
+  
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+useEffect(() => {
+  const isMobile = window.innerWidth < 768;
+  if (isMobile) return; // Disable hover logic on mobile
+
+  let index = 0;
+  const interval = setInterval(() => {
+    setHoveredIndex(index);
+    index = (index + 1) % propositions.length;
+  }, 2000); // Change every 2 seconds
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <main className="bg-black text-white min-h-screen">
 
       <CourseModules modules={modules} title="Inside The Course" />
 
       
-        <div className="container odr-course-bg ellipse-bg grid grid-cols-2 gap-10 mx-auto py-15 px-15  max-sm:mt-20 max-sm:grid-cols-1 max-sm:px-5 max-sm:py-5 max-sm:gap-3">
+        <div className="container odr-course-bg ellipse-bg grid grid-cols-2 gap-10 mx-auto py-15 px-15 mt-20 max-sm:mt-20 max-sm:grid-cols-1 max-sm:px-5 max-sm:py-5 max-sm:gap-3">
 
           <div className="">
             <Image src="/images/sign-up-odr-course.jpg" className='rounded-[30px]' alt="ODR Course" width={1000} height={1000} />
@@ -89,62 +127,34 @@ export default function CourseInsiderPage() {
 
         </div>
 
-        <div className="container grid grid-cols-2 gap-10 px-20 py-20 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10">
-          <div className=''>
-            <h2>
-              Other Key Proposition
-            </h2>
+         <div className="container grid grid-cols-2 gap-10 px-20 py-20 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10">
+      <div>
+        <h2>Other Key Proposition</h2>
+      </div>
+
+      <div className="container flex flex-col gap-10">
+        {propositions.map((item, index) => (
+          <div
+            key={index}
+            className={`flex flex-row gap-5 items-start key-proposition-item rounded-xl ${
+              hoveredIndex === index ? 'hovered' : ''
+            }`}
+          >
+            <Image
+              src="/images/graduation-icon.svg"
+              alt="ODR Course"
+              width={50}
+              height={50}
+              className="max-sm:w-10 max-sm:h-10"
+            />
+            <div>
+              <h4 className="mb-2">{item.title}</h4>
+              <p>{item.description}</p>
+            </div>
           </div>
-
-          <div className='container flex flex-col gap-10'>
-            <div className='flex flex-row gap-5 items-start key-proposition-item'>
-              <Image src="/images/graduation-icon.svg" alt="ODR Course" width={50} height={50} className='max-sm:w-10 max-sm:h-10' />
-              <div>
-                <h4 className='mb-2'>Internships:</h4>
-                <p>
-                  We offer a select group of students a unique 6-week incubation program,
-                  providing hands-on experience in Online Dispute Resolution (ODR).
-                </p>
-              </div>
-            </div>
-
-            <div className='flex flex-row gap-5 items-start key-proposition-item'>
-              <Image src="/images/graduation-icon.svg" alt="ODR Course" width={50} height={50} className='max-sm:w-10 max-sm:h-10' />
-              <div>
-                <h4 className='mb-2'>University Offering: </h4>
-                <p>
-                  We provide opportunities for a continuous knowledge-sharing framework,
-                  ensuring ongoing learning and growth for students.
-                </p>
-              </div>
-            </div>
-
-            <div className='flex flex-row gap-5 items-start key-proposition-item'>
-              <Image src="/images/graduation-icon.svg" alt="ODR Course" width={50} height={50} className='max-sm:w-10 max-sm:h-10' />
-              <div>
-                <h4 className='mb-2'>Scholarships: </h4>
-                <p>
-                  We offer merit-based concessions by covering a portion of the
-                  course fees for deserving students, subject to the terms of our scholarship program.
-                </p>
-              </div>
-            </div>
-
-            <div className='flex flex-row gap-5 items-start key-proposition-item'>
-              <Image src="/images/graduation-icon.svg" alt="ODR Course" width={50} height={50} className='max-sm:w-10 max-sm:h-10' />
-              <div>
-                <h4 className='mb-2'>Exclusive community:</h4>
-                <p>
-                  Course participants will join an exclusive ODR community, gaining access to periodic AMA sessions,
-                  job opportunities, a legal-tech innovation lab, and more.
-                </p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
+        ))}
+      </div>
+    </div>
       <div className='container  relative grid grid-cols-2 px-50 py-10 gap-10 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
 
           <div className='flex flex-col sticky top-20 h-fit max-h-[calc(300vh-80px)] justify-center items-center text-center'>
@@ -160,7 +170,7 @@ export default function CourseInsiderPage() {
 
           <div className='flex flex-col gap-20 investment-card relative'>
             {/* Card1 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-20 z-10'>
+            <div className='return-investment flex flex-col gap-5 sticky top-20 sm-top-50 z-10 max-sm:top-95'>
               <h4 className='text-[#FBB04C]'>
                 Are You a Learner/Fresher Student?
               </h4>
@@ -203,7 +213,7 @@ export default function CourseInsiderPage() {
             </div>
 
             {/* Card2 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-40 z-20'>
+            <div className='return-investment flex flex-col gap-5 sticky top-40 z-20 max-sm:top-110'>
               <h4 className='text-[#FBB04C]'>
                 Are You a Legal Professional/Access-to-Justice Advocate?
               </h4>
@@ -246,7 +256,7 @@ export default function CourseInsiderPage() {
             </div>
 
             {/* Card3 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-50 z-30'>
+            <div className='return-investment flex flex-col gap-5 sticky top-50 z-30 max-sm:top-95 '>
               <h4 className='text-[#FBB04C]'>
                   Are You an Academician/Entrepreneur/Innovator?
               </h4>

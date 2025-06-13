@@ -26,33 +26,20 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
     const handleScroll = () => {
       const section = sectionRef.current;
       if (!section) return;
-      
       const scrollY = window.scrollY + window.innerHeight / 2;
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      const sectionBottom = sectionTop + sectionHeight;
 
-      if (scrollY > sectionTop && scrollY < sectionBottom) {
-        // Calculate progress within the section
+      if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
         const progress = (scrollY - sectionTop) / sectionHeight;
-        
-        // Only update active index if we haven't reached the last module
-        if (progress < 0.99) { // Using 0.99 to ensure we're very close to the end
-          const idx = Math.min(
-            modules.length - 1,
-            Math.floor(progress * modules.length)
-          );
-          setActiveIndex(idx);
-          setScrollProgress(progress * 100);
-        } else {
-          // When we reach the end, ensure we show the last module
-          setActiveIndex(modules.length - 1);
-          setScrollProgress(100);
-        }
-      } else if (scrollY >= sectionBottom) {
-        // Force the last module to be shown when we're past the section
-        setActiveIndex(modules.length - 1);
-        setScrollProgress(100);
+        const idx = Math.min(
+          modules.length - 1,
+          Math.floor(progress * modules.length)
+        );
+        setActiveIndex(idx);
+
+        // Calculate overall progress for the progress bar
+        setScrollProgress(progress * 100);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -69,20 +56,18 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
 
       <section
         ref={sectionRef}
-        className="course-module-container relative "
-        style={{ height: `${modules.length * 20}vh` }}
+        className="course-module-container"
+        style={{ height: `${modules.length * 50}vh` }}
       >
-        <div className="container course-module-sticky">
-          
+        <div className="course-module-sticky">
           {title && (
-     <div className=" sticky top-0 z-40 bg-black py-10 max-sm:py-4 max-sm:px-10">
-  <h2 className="text-center mb-0 text-4xl font-bold text-white">{title}</h2>
-</div>
-
+            <div className="container mx-auto py-5 px-4 max-sm:py-4 max-sm:px-10">
+              <h2 className="text-center mb-0 text-4xl font-bold">{title}</h2>
+            </div>
           )}
           <div className="container h-full flex items-center justify-center">
             {/* Main content area */}
-            <div className="flex h-full items-start justify-center px-4 py-10 md:px-2 lg:px-6  max-w-6xl ">
+            <div className="flex h-full items-start justify-center px-4 py-10 md:px-8 lg:px-16 w-full max-w-6xl">
               <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-25 max-w-6xl mx-auto w-full">
                 {/* Left side - Card display that matches the screenshot */}
                 <div className="col-span-1 md:col-span-5 lg:col-span-4 flex justify-center">
@@ -97,7 +82,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
 
                     {/* Main card with image */}
                     <div className="relative course-module-card" style={{ zIndex: 3 }}>
-                      <div className="flex items-center justify-center w-full h-full relative ">
+                      <div className="flex items-center justify-center w-full h-full relative">
                         {/* Blue glow effect */}
                         <div className="absolute w-[180px] h-[180px] rounded-full bg-[rgba(0,122,255,0.15)] filter blur-[35px] z-0"></div>
 
