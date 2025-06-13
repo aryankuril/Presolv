@@ -13,7 +13,7 @@ import {
 } from 'firebase/auth';
 import { auth } from './../lib/firebase';
 import bcrypt from 'bcryptjs';
-import { span } from 'framer-motion/client';
+// import { span } from 'framer-motion/client';
 
 // SECURITY NOTE: All sensitive keys are referenced via environment variables (see .env files). Ensure HTTPS is always used in production.
 // Firebase configuration is loaded from src/app/lib/firebase.ts using environment variables.
