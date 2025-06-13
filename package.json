@@ -2,15 +2,13 @@
   "name": "presolve",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-  "dev": "next dev --turbopack",
-  "build": "npx rimraf .next && next build",
-  "start": "next start",
-  "lint": "next lint",
-  "clean": "npx rimraf .next"
-}
-
-,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "npx rimraf .next && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "npx rimraf .next"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",
@@ -34,7 +32,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.5",
+    "eslint-config-next": "^15.2.5",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
