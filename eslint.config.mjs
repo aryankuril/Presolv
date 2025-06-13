@@ -11,7 +11,7 @@ const compat = new FlatCompat({
 
 export default [
   ...compat.extends(
-    'next/core-web-vitals'
-   
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended' // add this only if using TypeScript
   ),
 ];
