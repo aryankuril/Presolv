@@ -252,7 +252,7 @@ export default function AuthPage() {
         <div className="flex-grow flex flex-col justify-center w-full">
           {activeTab === 'login' ? (
             <>
-              <h1 className="text-[40px] font-bold text-white mb-2">Welcome Back!</h1>
+              <h2 className="text-[40px] font-bold text-white mb-2">Welcome Back!</h2>
               <p className="text-[#FFFFFFB2] text-[14px] mb-12">Login to your account</p>
 
               {error && (
@@ -345,7 +345,7 @@ export default function AuthPage() {
             </>
           ) : (
             <>
-              <h1 className="text-[40px] font-bold text-white mb-2">Begggin Your ODR Journey</h1>
+              <h3 className="text-[40px] font-bold text-white mb-2">Begggin Your ODR Journey</h3>
               <p className="text-[#FFFFFFB2] text-[14px] mb-12">Register Your Account</p>
 
               {error && (
