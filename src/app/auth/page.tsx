@@ -13,6 +13,7 @@ import {
 } from 'firebase/auth';
 import { auth } from './../lib/firebase';
 import bcrypt from 'bcryptjs';
+// import Button from '@/app/components/Button';
 // import { span } from 'framer-motion/client';
 
 // SECURITY NOTE: All sensitive keys are referenced via environment variables (see .env files). Ensure HTTPS is always used in production.
@@ -457,7 +458,7 @@ export default function AuthPage() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-[#4285F4] text-white rounded-full py-4 px-6 flex items-center justify-center gap-2 hover:bg-[#4285F4]/90 text-[14px] font-medium mt-8"
+                  className="w-full bg-[#4285F4] text-white rounded-full py-8 px-10 flex items-center justify-center gap-2 hover:bg-[#4285F4]/90 text-[18px] font-medium mt-8 h-[60px]"
                 >
                   {isLoading ? (
                     <span className="flex items-center gap-2">

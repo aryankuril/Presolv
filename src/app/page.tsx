@@ -1,9 +1,12 @@
+'use client';
+
 import AnimatedBackground from "./components/AnimatedBackground";
 import Button from "./components/Button";
 import CardCarousel from "./components/CardCarousel";
-
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
   const cards = [
     {
       imageSrc: "./images/digital-toolbox.svg",
@@ -55,14 +58,14 @@ export default function Home() {
 
           {/*button*/}
           <div className="flex justify-center">
-            <Button>
+            <Button onClick={() => router.push('/auth')}>
               GET STARTED
             </Button>
           </div>
         </div>
 
         {/* Card Carousel */}
-        <div className="container relative mx-auto py-20 px-20 max-sm:px-10 max-sm:py-10">
+        <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-5">
           <CardCarousel
             cards={cards}
             showNavigation={true}

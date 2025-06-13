@@ -48,7 +48,8 @@ body {
 /* Carousel slide for desktop */
 @media (max-width: 768px) {
   .embla-slide {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
+    padding-left: 0.5rem;
   }
 
   .course-module-sticky {
@@ -59,6 +60,9 @@ body {
     bottom: 2px!important;
   }
   
+  .embla-slide:nth-child(n) .custom-card {
+    transform: none;
+  }
 }
 
 /* Carousel slide for desktop */
@@ -67,7 +71,6 @@ body {
     height: 75vh;
   }
   
-
   .embla-slide {
     flex: 0 0 25%;
   }
@@ -117,6 +120,56 @@ body {
   overflow: visible;
   transition: transform 0.3s ease-out;
   transform-origin: center center;
+}
+
+/* Mobile responsive styles for custom card */
+@media (max-width: 768px) {
+  .custom-card {
+    min-height: 250px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .custom-card::before {
+    border-radius: 20px;
+  }
+
+  .icon-card::before {
+    width: 120px;
+    height: 120px;
+    filter: blur(25px);
+  }
+
+  .icon-card:after {
+    width: 90px;
+    height: 85px;
+    filter: blur(20px);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .custom-card {
+    min-height: 200px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .custom-card::before {
+    border-radius: 15px;
+  }
+
+  .icon-card::before {
+    width: 100px;
+    height: 100px;
+    filter: blur(20px);
+  }
+
+  .icon-card:after {
+    width: 75px;
+    height: 70px;
+    filter: blur(15px);
+  }
 }
 
 /* Custom card before */
@@ -180,15 +233,61 @@ body {
   z-index: 1;
 }
 
-
 /* Icon card image */
 .icon-card img {
   position: relative;
   z-index: 2;
   filter: brightness(1.2);
   -webkit-filter: brightness(1.2);
+  max-width: 100%;
+  height: auto;
 }
 
+/* Mobile responsive styles for icon card */
+@media (max-width: 768px) {
+  .icon-card::before {
+    width: 120px;
+    height: 120px;
+    top: 45%;
+    left: 50%;
+    filter: blur(25px);
+  }
+
+  .icon-card:after {
+    width: 90px;
+    height: 85px;
+    top: 120px;
+    left: 50%;
+    filter: blur(20px);
+  }
+
+  .icon-card img {
+    max-width: 80%;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .icon-card::before {
+    width: 100px;
+    height: 100px;
+    top: 45%;
+    left: 50%;
+    filter: blur(20px);
+  }
+
+  .icon-card:after {
+    width: 75px;
+    height: 70px;
+    top: 100px;
+    left: 50%;
+    filter: blur(15px);
+  }
+
+  .icon-card img {
+    max-width: 70%;
+  }
+}
 
 /* Remove any background from carousel containers */
 .embla-container {
@@ -720,6 +819,15 @@ li{
   transform-origin: center center;
 }
 
+@media (max-width: 768px) {
+  .course-module-card {
+    min-height: 250px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+}
+
 /*team card before*/
 .course-module-card::before {
   content: "";
@@ -810,7 +918,7 @@ li{
 /* Stacked Card Animation Styles */
 .stacked-card-container {
   position: relative;
-  width: 280px;
+  width: 380px;
   height: 280px;
   perspective: 1000px;
 }
@@ -906,12 +1014,14 @@ li{
   z-index: 0;
 }
 
-.key-proposition-item:hover {
+.key-proposition-item:hover,
+.key-proposition-item.hovered {
   transform: translateX(-20%);
   padding: 20px;
 }
 
-.key-proposition-item:hover::before {
+.key-proposition-item:hover::before,
+.key-proposition-item.hovered::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -944,6 +1054,50 @@ li{
 .faq-description {
   width: 100%;
   color: rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation button styles */
+.navigation-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navigation-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile responsive styles for navigation buttons */
+@media (max-width: 768px) {
+  .navigation-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navigation-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .navigation-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navigation-button svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 

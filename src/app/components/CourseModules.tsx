@@ -49,6 +49,16 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
   // Add click handler for direct module navigation
   const handleModuleClick = (index: number) => {
     setActiveIndex(index);
+    const section = sectionRef.current;
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const targetScroll = sectionTop + (sectionHeight * (index / modules.length));
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -57,7 +67,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
       <section
         ref={sectionRef}
         className="course-module-container"
-        style={{ height: `${modules.length * 50}vh` }}
+        style={{ height: `${modules.length * (window.innerWidth < 768 ? 25 : 50)}vh` }}
       >
         <div className="course-module-sticky">
           {title && (
@@ -67,8 +77,8 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
           )}
           <div className="container h-full flex items-center justify-center">
             {/* Main content area */}
-            <div className="flex h-full items-start justify-center px-4 py-10 md:px-8 lg:px-16 w-full max-w-6xl">
-              <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-25 max-w-6xl mx-auto w-full">
+            <div className="flex h-full items-start justify-center px-4 py-10 md:px-8 lg:px-16 w-full max-w-6xl max-sm:py-2">
+              <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-25 max-w-6xl mx-auto w-full max-sm:gap-4">
                 {/* Left side - Card display that matches the screenshot */}
                 <div className="col-span-1 md:col-span-5 lg:col-span-4 flex justify-center">
                   <div className="relative max-sm:w-[250px] max-sm:h-[250px] sm:w-[380px] sm:h-[300px]">
@@ -81,10 +91,10 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
                     </div>
 
                     {/* Main card with image */}
-                    <div className="relative course-module-card" style={{ zIndex: 3 }}>
+                    <div className="relative course-module-card max-sm:h-[50px]" style={{ zIndex: 3 }}>
                       <div className="flex items-center justify-center w-full h-full relative">
                         {/* Blue glow effect */}
-                        <div className="absolute w-[180px] h-[180px] rounded-full bg-[rgba(0,122,255,0.15)] filter blur-[35px] z-0"></div>
+                        <div className="absolute w-[180px] h-[180px] max-sm:h-[50px] rounded-full bg-[rgba(0,122,255,0.15)] filter blur-[35px] z-0"></div>
 
                         {/* Active module image */}
                         {modules.map((module, idx) => (
@@ -102,7 +112,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
                               alt={`Module ${module.id}`}
                               width={200}
                               height={200}
-                              className="w-4/5 h-4/5 object-contain"
+                              className="w-4/5 h-4/5 object-contain max-sm:h-3/5"
                               style={{ filter: 'brightness(1.2)' }}
                             />
                           </div>
@@ -126,10 +136,10 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
                           position: isActive ? 'relative' : 'absolute',
                         }}
                       >
-                        <h2 className="mb-3 text-center md:text-left">{module.title}</h2>
+                        <h2 className="mb-3 text-center mt:10 md:text-left">{module.title}</h2>
                         <p className="md:text-base mb-4 opacity-80 text-center md:text-left">{module.description}</p>
                         <div className="flex justify-center md:justify-start">
-                          <Link href={`/course/module-${module.id}`}>
+                          <Link href="/auth">
                             <Button>
                               GET STARTED
                             </Button>

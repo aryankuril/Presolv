@@ -55,22 +55,22 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Contact Information */}
             <div>
-              <h3 className="text-[#FBB04C] text-lg font-semibold mb-4">Contact Us</h3>
+              <h4 className="text-[#FBB04C] text-lg font-semibold mb-4">Contact Us</h4>
               <ul className="space-y-4">
                 <li className="text-white flex items-start gap-3">
                   <Image src="/images/location.svg" alt="Location" width={30} height={35} className='color-white' />
-                  <h5 className="text-white">Presolv360, Esperanca Building, Colaba, Mumbai - 400001</h5>
+                  <h6 className="text-white">Presolv360, Esperanca Building, Colaba, Mumbai - 400001</h6>
                 </li>
                 <li className="text-white flex items-center gap-3">
                   <Image src="/images/email.svg" alt="Email" width={30} height={35} />
-                  <h5 className="text-white">trainings@presolv360.com</h5>
+                  <h6 className="text-white">trainings@presolv360.com</h6>
                 </li>
               </ul>
             </div>
             
             {/* Quick Links */}
             <div>
-              <h3 className="text-[#FBB04C] text-lg font-semibold mb-4">Quick Links</h3>
+              <h4 className="text-[#FBB04C] text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
@@ -78,7 +78,7 @@ export default function Footer() {
                       href={link.href} 
                       className="text-white hover:text-[#FBB04C] transition-colors"
                     >
-                      <h5>{link.label}</h5>
+                      <h6>{link.label}</h6>
                     </Link>
                   </li>
                 ))}
@@ -87,7 +87,7 @@ export default function Footer() {
             
             {/* Social Links */}
             <div>
-              <h3 className="text-[#FBB04C] text-lg font-semibold mb-4">Stay Connected</h3>
+              <h4 className="text-[#FBB04C] text-lg font-semibold mb-4">Stay Connected</h4>
               <div className="flex space-x-6">
                 {socialLinks.map((social) => (
                   <a 
@@ -106,17 +106,17 @@ export default function Footer() {
 
           {/* Disclaimer */}
           <div className='mt-12'>
-            <h3 className='text-[#FBB04C] text-lg font-semibold mb-4'>Disclaimer</h3>
-            <h5 className='text-white'>
+            <h4 className='text-[#FBB04C] text-lg font-semibold mb-4'>Disclaimer</h4>
+            <h6 className='text-white'>
               Presolv360 is not a law firm and does not provide legal advice. The use of any materials or service is not a substitute for legal advice. Only a legal practitioner can provide legal advice. A legal practitioner should be consulted for any legal advice or matter. No Attorney-Client relationship is created by use of these materials or services.
-            </h5>
+            </h6>
           </div>
 
           {/* Copyright */}
           <div className="border-t border-gray-800 mt-12 pt-8">
-            <h5 className="text-white text-center">
+            <h6 className="text-white text-center">
               © {currentYear} Presolv360. All rights reserved.
-            </h5>
+            </h6>
           </div>
         </div>
       </div>

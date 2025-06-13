@@ -124,7 +124,7 @@ const CardCarousel = ({
                     decoding="async"
                   />
                 </div>
-                <h4 className="text-center whitespace-normal">{card.title}</h4>
+                <h5 className="text-center whitespace-normal">{card.title}</h5>
               </div>
             </div>
           ))}

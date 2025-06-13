@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from '../components/Button';
+import Link from 'next/link';
 import aboutImage from '../../../public/images/about-presolv-1.jpg';
 import aboutImage2 from '../../../public/images/about-presolv-2.jpg';
 import ImageCarousel from '../components/ImageCarousel';
@@ -164,9 +165,11 @@ export default function AboutPage() {
         
           {/*button*/}
           <div className="flex justify-center">
-            <Button>
-            BE A PART OF OUR TEAM
-            </Button>
+            <Link href="/auth">
+              <Button>
+                BE A PART OF OUR TEAM
+              </Button>
+            </Link>
           </div>
       </div>
 

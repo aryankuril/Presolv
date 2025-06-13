@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 import Accordion from '../components/Accordion';
 import Button from '../components/Button';
+import { useRouter } from 'next/navigation';
 
 const modules = [
   {
@@ -70,21 +71,22 @@ const propositions = [
 ];
 
 export default function CourseInsiderPage() {
-  
+  const router = useRouter();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-useEffect(() => {
-  const isMobile = window.innerWidth < 768;
-  if (isMobile) return; // Disable hover logic on mobile
-
-  let index = 0;
-  const interval = setInterval(() => {
-    setHoveredIndex(index);
-    index = (index + 1) % propositions.length;
-  }, 2000); // Change every 2 seconds
-
-  return () => clearInterval(interval);
-}, []);
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return; // Disable hover logic on mobile
+  
+    let index = 0;
+    const interval = setInterval(() => {
+      setHoveredIndex(index);
+      index = (index + 1) % propositions.length;
+    }, 2000); // Change every 2 seconds
+  
+    return () => clearInterval(interval);
+  }, []);
+  
   return (
     <main className="bg-black text-white min-h-screen">
 
@@ -119,7 +121,7 @@ useEffect(() => {
             
           {/*button*/}
           <div className="flex justify-left">
-            <Button>
+            <Button onClick={() => router.push('/auth')}>
               GET STARTED
             </Button>
           </div>
@@ -155,6 +157,7 @@ useEffect(() => {
         ))}
       </div>
     </div>
+
       <div className='container  relative grid grid-cols-2 px-50 py-10 gap-10 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
 
           <div className='flex flex-col sticky top-20 h-fit max-h-[calc(300vh-80px)] justify-center items-center text-center'>
