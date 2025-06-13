@@ -70,7 +70,7 @@ const propositions = [
   },
 ];
 
-export default function CourseInsiderPage() {
+export default function CourseInsiderPage()  {
   const router = useRouter();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -84,10 +84,10 @@ export default function CourseInsiderPage() {
     const interval = setInterval(() => {
       setHoveredIndex(index);
       index = (index + 1) % propositions.length;
-    }, 2000);
+    }, 2000);    
   
     return () => clearInterval(interval);
-  }, []);
+  }, [] );
   
   
   return (
