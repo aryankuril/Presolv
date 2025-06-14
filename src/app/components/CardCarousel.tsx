@@ -111,8 +111,8 @@ const CardCarousel = ({
       <div className="embla-viewport" ref={emblaRef}>
         <div className="embla-container flex">
           {cards.map((card, index) => (
-            <div key={index} className="embla-slide w-full md:w-1/2 lg:w-1/4 px-4">
-              <div className={`custom-card flex-col gap-y-8 sm:gap-y-12 lg:gap-y-20 ${cardClassName}`}>
+            <div key={index} className="embla-slide w-[90%] md:w-1/2 lg:w-1/4 px-4">
+              <div className={`custom-card flex-col gap-y-8 sm:gap-y-12 lg:gap-y-20 min-h-[600px] md:min-h-[500px] lg:min-h-[400px] ${cardClassName}`}>
                 <div className="icon-card flex justify-center items-center">
                   <Image 
                     src={card.imageSrc} 

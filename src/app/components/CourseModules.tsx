@@ -40,25 +40,35 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
     const handleScroll = () => {
       const section = sectionRef.current;
       if (!section) return;
-      const scrollY = window.scrollY + window.innerHeight / 2;
+  
+      const scrollY = window.scrollY;
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-
-      if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
-        const progress = (scrollY - sectionTop) / sectionHeight;
-        const idx = Math.min(
-          modules.length - 1,
-          Math.floor(progress * modules.length)
-        );
-        setActiveIndex(idx);
-
-        // Calculate overall progress for the progress bar
-        setScrollProgress(progress * 100);
+  
+      if (scrollY <= sectionTop) {
+        setActiveIndex(0);
+        setScrollProgress(0);
+        return;
       }
+  
+      if (scrollY >= sectionTop + sectionHeight) {
+        setActiveIndex(modules.length - 1);
+        setScrollProgress(100);
+        return;
+      }
+  
+      let progress = (scrollY - sectionTop) / sectionHeight;
+      progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
+  
+      const idx = Math.round(progress * (modules.length - 1));
+      setActiveIndex(idx);
+      setScrollProgress(progress * 100);
     };
+  
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [modules.length]);
+  
 
   // Add click handler for direct module navigation
   const handleModuleClick = (index: number) => {

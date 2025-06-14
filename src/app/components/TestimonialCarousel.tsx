@@ -111,7 +111,7 @@ const TestimonialCarousel = ({
           <path d="M5 9L12 16L19 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
-      <div className="relative w-full h-[420px]" style={{ minHeight: 350 }}>
+      <div className="relative w-full h-[220px]" style={{ minHeight: 350 }}>
         {stackIndices.map((testimonialIdx, pos) => (
           <div
             key={testimonialIdx}

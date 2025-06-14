@@ -125,7 +125,8 @@ body {
 /* Mobile responsive styles for custom card */
 @media (max-width: 768px) {
   .custom-card {
-    min-height: 250px;
+    /* min-height: 350px; */
+    height:320px ;
     padding: 15px;
     border-radius: 20px;
   }
@@ -306,7 +307,7 @@ body {
   border-radius: 30px;
   background: radial-gradient(52.82% 35.28% at 50.42% 75.64%, #5BA9FF 0%, #007AFF 100%);
   box-shadow: 0px 3px 1.5px 0px #81BDFE;
-  width: auto;
+  /* width: 50px; */
   height: 51px;
   padding: 10px 30px ;
 }
@@ -516,7 +517,7 @@ body {
     --h2: 24px;
     --h3: 20px;
     --h4: 18px;
-    --h5: 12px;
+    --h5: 18px;
     --h6: 15px;
     --p: 12px;
     --li:12px;
@@ -903,6 +904,7 @@ li{
   background: rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .course-module-progress-bar {
@@ -913,6 +915,9 @@ li{
   border-radius: 9999px;
   background: linear-gradient(to right, #FBB04C 13%, #007AFF 81%);
   transition: width 0.3s ease;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Stacked Card Animation Styles */
@@ -1097,6 +1102,20 @@ li{
   .navigation-button svg {
     width: 14px;
     height: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .key-proposition-item:hover,
+  .key-proposition-item.hovered,
+  .key-proposition-item:hover::before,
+  .key-proposition-item.hovered::before {
+    transform: none !important;
+    padding: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    content: none !important;
   }
 }
 

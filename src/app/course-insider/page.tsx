@@ -78,7 +78,10 @@ export default function CourseInsiderPage()  {
     if (typeof window === 'undefined') return;
   
     const isMobile = window.innerWidth < 768;
-    if (isMobile) return;
+    if (isMobile) {
+      setHoveredIndex(null); // Disable hover effect on mobile
+      return;
+    }
   
     let index = 0;
     const interval = setInterval(() => {
@@ -142,7 +145,7 @@ export default function CourseInsiderPage()  {
           <div
             key={index}
             className={`flex flex-row gap-5 items-start key-proposition-item rounded-xl ${
-              hoveredIndex === index ? 'hovered' : ''
+              hoveredIndex === index && window.innerWidth >= 768 ? 'hovered' : ''
             }`}
           >
             <Image
@@ -176,7 +179,7 @@ export default function CourseInsiderPage()  {
 
           <div className='flex flex-col gap-20 investment-card relative'>
             {/* Card1 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-20 sm-top-50 z-10 max-sm:top-95'>
+            <div className='return-investment flex flex-col gap-5 sticky top-20 sm-top-50 z-10 max-sm:top-40'>
               <h4 className='text-[#FBB04C]'>
                 Are You a Learner/Fresher Student?
               </h4>
@@ -219,7 +222,7 @@ export default function CourseInsiderPage()  {
             </div>
 
             {/* Card2 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-40 z-20 max-sm:top-110'>
+            <div className='return-investment flex flex-col gap-5 sticky top-40 z-20 max-sm:top-52'>
               <h4 className='text-[#FBB04C]'>
                 Are You a Legal Professional/Access-to-Justice Advocate?
               </h4>
