@@ -119,7 +119,7 @@ const TestimonialCarousel = ({
             className="transition-all duration-500"
           >
             <div className={`custom-card flex-col gap-y-8 sm:gap-y-12 lg:gap-y-20 w-full ${cardClassName}`}>  
-              <p className="mb-4">{testimonials[testimonialIdx].text}</p>
+              <h6 className="mb-4">{testimonials[testimonialIdx].text}</h6>
               <p className="font-semibold text-blue-400">{testimonials[testimonialIdx].author}</p>
             </div>
           </div>
