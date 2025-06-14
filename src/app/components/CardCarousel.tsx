@@ -132,22 +132,22 @@ const CardCarousel = ({
       </div>
 
       {showNavigation && (
-        <div className="flex justify-between absolute top-1/2 transform -translate-y-1/2 -left-4 -right-4">
+        <div className="flex justify-between absolute top-1/2 transform -translate-y-1/2 left-0 right-0 px-2 md:px-4">
           <button
-            className="w-12 h-12 flex items-center justify-center rounded-[59px] bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 ml-4"
+            className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center rounded-[59px] bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200"
             onClick={scrollPrev}
             aria-label="Previous slide"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="16" height="16" className="md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 19L8 12L15 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
           <button
-            className="w-12 h-12 flex items-center justify-center rounded-[59px] bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 mr-4"
+            className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center rounded-[59px] bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200"
             onClick={scrollNext}
             aria-label="Next slide"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="16" height="16" className="md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 5L16 12L9 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
@@ -159,7 +159,7 @@ const CardCarousel = ({
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors duration-200 ${
                 index === selectedIndex ? 'bg-white' : 'bg-white/30'
               }`}
               onClick={() => scrollTo(index)}

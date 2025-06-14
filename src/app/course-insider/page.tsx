@@ -262,7 +262,7 @@ export default function CourseInsiderPage()  {
             </div>
 
             {/* Card3 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-50 z-30 max-sm:top-95 '>
+            <div className='return-investment flex flex-col gap-5 sticky top-50 z-30 max-sm:top-85 '>
               <h4 className='text-[#FBB04C]'>
                   Are You an Academician/Entrepreneur/Innovator?
               </h4>

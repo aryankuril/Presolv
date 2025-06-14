@@ -8,12 +8,14 @@ interface AuthContextProps {
   user: User | null;
   loading: boolean;
   isLoggedIn: boolean;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps>({
   user: null,
   loading: true,
   isLoggedIn: false,
+  logout: async () => {},
 });
 
 export function useAuth() {
@@ -33,10 +35,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => unsubscribe();
   }, []);
 
+  const logout = async () => {
+    try {
+      await auth.signOut();
+      localStorage.removeItem('user_data');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
   const isLoggedIn = !!user;
 
   return (
-    <AuthContext.Provider value={{ user, loading, isLoggedIn }}>
+    <AuthContext.Provider value={{ user, loading, isLoggedIn, logout }}>
       {children}
     </AuthContext.Provider>
   );
