@@ -21,6 +21,20 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [sectionHeight, setSectionHeight] = useState('50vh');
+
+  useEffect(() => {
+    // Set initial height
+    setSectionHeight(`${modules.length * (window.innerWidth < 768 ? 25 : 50)}vh`);
+
+    // Update height on window resize
+    const handleResize = () => {
+      setSectionHeight(`${modules.length * (window.innerWidth < 768 ? 25 : 50)}vh`);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [modules.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +81,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
       <section
         ref={sectionRef}
         className="course-module-container"
-        style={{ height: `${modules.length * (window.innerWidth < 768 ? 25 : 50)}vh` }}
+        style={{ height: sectionHeight }}
       >
         <div className="course-module-sticky">
           {title && (
