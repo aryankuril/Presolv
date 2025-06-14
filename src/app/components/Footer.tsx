@@ -36,7 +36,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative">
+    <footer className="relative" style={{ letterSpacing: '0px' }}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image

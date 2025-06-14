@@ -128,11 +128,11 @@ body {
     /* min-height: 350px; */
     height:320px ;
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 30px;
   }
 
   .custom-card::before {
-    border-radius: 20px;
+    border-radius: 30px;
   }
 
   .icon-card::before {
@@ -153,11 +153,11 @@ body {
   .custom-card {
     min-height: 200px;
     padding: 12px;
-    border-radius: 15px;
+    border-radius: 20px;
   }
 
   .custom-card::before {
-    border-radius: 15px;
+    border-radius: 20px;
   }
 
   .icon-card::before {
@@ -297,6 +297,7 @@ body {
 
 /* Custom card content */
 .custom-card > * {
+  border-radius: 30px;
   position: relative;
   z-index: 2;
 }
@@ -312,6 +313,19 @@ body {
   padding: 10px 30px ;
 }
 
+@media (max-width: 768px) {
+  .custom-btn-primary {
+    height: 40px;
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-btn-primary {
+    height: 30px;
+    padding: 20px 15px;
+  }
+}
 
 /*team card*/
 .team-card {
@@ -505,7 +519,7 @@ body {
   --h3: 36px;
   --h4: 30px;
   --h5: 24px;
-  --h6: 20px;
+  --h6: 16px;
   --p: 18px;
   --li:18px;
 }
@@ -517,8 +531,8 @@ body {
     --h2: 24px;
     --h3: 20px;
     --h4: 18px;
-    --h5: 18px;
-    --h6: 15px;
+    --h5: 16px;
+    --h6: 12px;
     --p: 12px;
     --li:12px;
   }
