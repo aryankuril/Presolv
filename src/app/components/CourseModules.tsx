@@ -25,11 +25,11 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
 
   useEffect(() => {
     // Set initial height
-    setSectionHeight(`${modules.length * (window.innerWidth < 768 ? 25 : 50)}vh`);
+    setSectionHeight(`${modules.length * (window.innerWidth < 768 ? 120 : 100)}vh`);
 
     // Update height on window resize
     const handleResize = () => {
-      setSectionHeight(`${modules.length * (window.innerWidth < 768 ? 25 : 50)}vh`);
+      setSectionHeight(`${modules.length * (window.innerWidth < 768 ? 120 : 100)}vh`);
     };
 
     window.addEventListener('resize', handleResize);
@@ -44,6 +44,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
       const scrollY = window.scrollY;
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
+      const moduleHeight = sectionHeight / modules.length;
   
       if (scrollY <= sectionTop) {
         setActiveIndex(0);
@@ -51,18 +52,18 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
         return;
       }
   
-      if (scrollY >= sectionTop + sectionHeight) {
-        setActiveIndex(modules.length - 1);
-        setScrollProgress(100);
-        return;
-      }
-  
-      let progress = (scrollY - sectionTop) / sectionHeight;
-      progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
-  
-      const idx = Math.round(progress * (modules.length - 1));
-      setActiveIndex(idx);
-      setScrollProgress(progress * 100);
+      // Calculate which module we're on
+      const currentModule = Math.floor((scrollY - sectionTop) / moduleHeight);
+      
+      // Calculate progress within the current module
+      const moduleProgress = ((scrollY - sectionTop) % moduleHeight) / moduleHeight;
+      
+      // Set the active index based on the current module
+      setActiveIndex(Math.min(currentModule, modules.length - 1));
+      
+      // Calculate total progress
+      const totalProgress = (currentModule + moduleProgress) / (modules.length - 1);
+      setScrollProgress(Math.min(totalProgress * 100, 100));
     };
   
     window.addEventListener('scroll', handleScroll);
@@ -77,7 +78,8 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
     if (section) {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      const targetScroll = sectionTop + (sectionHeight * (index / modules.length));
+      const moduleHeight = sectionHeight / modules.length;
+      const targetScroll = sectionTop + (moduleHeight * index);
       window.scrollTo({
         top: targetScroll,
         behavior: 'smooth'

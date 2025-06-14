@@ -111,7 +111,7 @@ const CardCarousel = ({
       <div className="embla-viewport" ref={emblaRef}>
         <div className="embla-container flex">
           {cards.map((card, index) => (
-            <div key={index} className="embla-slide w-[90%] md:w-1/2 lg:w-1/4 px-4">
+            <div key={index} className="embla-slide w-full md:w-1/2 lg:w-1/4 px-5 py-5">
               <div className={`custom-card flex-col gap-y-8 sm:gap-y-12 lg:gap-y-20 min-h-[600px] md:min-h-[500px] lg:min-h-[400px] ${cardClassName}`}>
                 <div className="icon-card flex justify-center items-center">
                   <Image 
@@ -132,7 +132,7 @@ const CardCarousel = ({
       </div>
 
       {showNavigation && (
-        <div className="flex justify-between absolute top-1/2 transform -translate-y-1/2 left-0 right-0 px-2 md:px-4">
+        <div className="flex justify-between absolute top-1/2 transform -translate-y-1/2 left-0 right-0 px-4 md:px-4">
           <button
             className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center rounded-[59px] bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200"
             onClick={scrollPrev}

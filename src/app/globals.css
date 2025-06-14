@@ -33,14 +33,14 @@ body {
   backface-visibility: hidden;
   display: flex;
   touch-action: pan-y;
-  margin-left: -1rem;
+  /* margin-left: 1rem; */
 }
 
 /* Carousel slide */
 .embla-slide {
   position: relative;
   min-width: 0;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   flex: 0 0 100%;
   overflow: visible;
 }
@@ -49,7 +49,7 @@ body {
 @media (max-width: 768px) {
   .embla-slide {
     flex: 0 0 100%;
-    padding-left: 0.5rem;
+    /* padding-left: 0.5rem; */
   }
 
   .course-module-sticky {
