@@ -10,39 +10,39 @@ import { useRouter } from 'next/navigation';
 const modules = [
   {
     id: '01',
-    image: '/images/unravelling-the-past.svg',
+    image: '/images/slider/1.svg',
     title: 'Unravelling the Past: ADR and ODR through History',
   },
   {
     id: '02',
-    image: '/images/smart-contracts.svg',
+    image: '/images/slider/2.svg',
     title: 'ODR in Action: Integrating ODR into Daily Life',
   },
   {
     id: '03',
-    image: '/images/digital-toolbox.svg',
+    image: '/images/slider/3.svg',
     title: 'The Art of Negotiation: Navigating Conflicts through ODR',
 
   },
   {
     id: '04',
-    image: '/images/virtual-reality.svg',
+    image: '/images/slider/4.svg',
     title: 'Mediation Magic: Unlocking Resolution Possibilities',
   },
   {
     id: '05',
-    image: '/images/certification.svg',
+    image: '/images/slider/5.svg',
     title: 'Virtual Resolution: Exploring ODR in the Arbitration Landscape',
 
   },
   {
     id: '06',
-    image: '/images/case-studies.svg',
+    image: '/images/slider/6.svg',
     title: 'Building Bridges, Not Walls: The Digital Toolbox',
   },
   {
     id: '07',
-    image: '/images/journey.svg',
+    image: '/images/slider/7.svg',
     title: 'Embracing the Future: Innovations in ODR'
   },
 ];
