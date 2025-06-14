@@ -7,7 +7,7 @@ const AnimatedBackground = () => {
       <div className="relative w-full h-full">
         <div className="absolute left-[5%] sm:left-[5%] md:left-[12%] top-[55%] md:top-[85%] sm-top-[35%] -translate-y-1/2 animate-float-left">
           <Image
-            src="/images/vector2.svg"
+            src="/images/Vector2.svg"
             alt="Communication Left"
             width={400}
             height={400}
@@ -17,7 +17,7 @@ const AnimatedBackground = () => {
         </div>
         <div className="absolute right-[5%] sm:right-[5%] md:right-[12%] top-[55%] md:top-[85%] sm-top-[35%] -translate-y-1/2 animate-float-right">
           <Image
-          src="/images/vector1.svg"
+            src="/images/Vector1.svg"
             alt="Communication Right"
             width={400}
             height={400} 
