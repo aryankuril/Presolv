@@ -228,10 +228,10 @@ export default function AuthPage() {
       {/* Form Section */}
       <div className="w-full max-w-[480px] p-8 flex flex-col items-center justify-center bg-transparent">
         <div className="flex justify-between items-center mb-12 w-full">
-          <div className="flex gap-6">
+          <div className="flex gap-6 ">
             <button 
               onClick={() => setActiveTab('login')}
-              className={`px-8 py-2 rounded-full text-[14px] font-medium transition-colors ${
+              className={`px-8 py-2 rounded-full text-[14px] font-bold transition-colors ${
                 activeTab === 'login' 
                   ? 'bg-[#FBB04C] text-black' 
                   : 'text-white hover:text-gray-300'
@@ -241,7 +241,7 @@ export default function AuthPage() {
             </button>
             <button 
               onClick={() => setActiveTab('signup')}
-              className={`px-8 py-2 rounded-full text-[14px] font-medium transition-colors ${
+              className={`px-8 py-2 rounded-full text-[14px] font-bold  transition-colors ${
                 activeTab === 'signup' 
                   ? 'bg-[#FBB04C] text-black' 
                   : 'text-white hover:text-gray-300'
@@ -313,7 +313,7 @@ export default function AuthPage() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                className="w-full  bg-[#4285F4] text-white rounded-full py-8 px-20 flex items-center justify-center gap-2 hover:bg-[#4285F4]/90 text-[18px] font-medium mt-8 h-[60px]"
+                className=" bg-[#4285F4] text-white rounded-full py-8 px-20 flex items-center justify-center gap-2 hover:bg-[#4285F4]/90 text-[18px] font-medium mt-8 h-[60px]"
                 >
                   {isLoading ? (
                     <span className="flex items-center gap-2">
@@ -321,8 +321,8 @@ export default function AuthPage() {
                      
                     </span>
                   ) : (
-                    <span className="flex items-center gap-2">
-                    LOGIN 
+                    <span className="flex items-center gap-2 font-bold">
+                    <strong>LOGIN</strong>
                     
                     </span>
                     
@@ -455,7 +455,7 @@ export default function AuthPage() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full  bg-[#4285F4] text-white rounded-full py-8 px-20 flex items-center justify-center gap-2 hover:bg-[#4285F4]/90 text-[18px] font-medium mt-8 h-[60px]"
+                  className=" bg-[#4285F4] text-white rounded-full py-8 px-20 flex items-center justify-center gap-2 hover:bg-[#4285F4]/90 text-[18px] font-medium mt-8 h-[60px]"
                 >
                   {isLoading ? (
                     <span className="flex items-center gap-2">
@@ -466,8 +466,8 @@ export default function AuthPage() {
                       Creating Account...
                     </span>
                   ) : (
-                    <span className="flex items-center gap-2">
-                    GET STARTED
+                    <span className="flex items-center gap-2 font-bold">
+                    <strong>GET STARTED</strong>
              
                     </span>
                   )}

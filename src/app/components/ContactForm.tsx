@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Button from '../components/Button';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -30,76 +31,25 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-20 bg-[#0A0A0A]">
-      <div className="container mx-auto px-4">
-        <div className="bg-gradient-to-b from-[#898989] to-[#232323] bg-opacity-20 backdrop-blur-xl rounded-[45px] p-8 md:p-12 border border-[rgba(79,172,254,0.5)] shadow-[0px_2px_4px_rgba(79,172,254,1)] relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-67 blur-[157px] border border-[rgba(251,176,76,0.6)]"></div>
-          
-          <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-futura text-white text-center mb-6">
-              Have Questions? We&apos;re Here to Help!
-            </h2>
-            
-            <p className="text-gray-600 mb-8">
-              Have questions about our ODR certification program? We&apos;re here to help.
-            </p>
-            <p className="text-gray-600 mb-8">
-              Whether you&apos;re interested in our courses, have questions about pricing, or need help with your account, our team is ready to assist you.
-            </p>
-            
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
-              <div className="mb-6">
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Name"
-                  className="w-full bg-transparent border-b border-gray-400 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-[#FBB04C]"
-                  required
-                />
-              </div>
-              
-              <div className="mb-6">
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Phone No."
-                  className="w-full bg-transparent border-b border-gray-400 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-[#FBB04C]"
-                  required
-                />
-              </div>
-              
-              <div className="mb-12">
-                <textarea
-                  name="questions"
-                  value={formData.questions}
-                  onChange={handleChange}
-                  placeholder="Any Questions?"
-                  className="w-full bg-transparent border-b border-gray-400 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-[#FBB04C] resize-none"
-                  rows={4}
-                ></textarea>
-              </div>
-              
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="bg-gradient-to-b from-[#007AFF] to-[#007AFF] rounded-full py-3 px-6 text-white uppercase flex items-center gap-2 relative overflow-hidden group"
-                >
-                  <span className="relative z-10">Submit</span>
-                  <div className="absolute top-0 left-0 w-full h-full bg-[#007AFF] rounded-full"></div>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-[#ADD4FF] rounded-full opacity-30 blur-[60px] group-hover:opacity-50 transition-opacity"></div>
-                  <svg className="w-5 h-5 relative z-10" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="white"/>
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+    <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
+    <div>
+      <h2 className='text-center'>
+        Have Questions? We&apos;re Here to Help!
+      </h2>
+      <p className='text-center pt-5'>
+        Share your name and phone number, and we&apos;ll reach out with all the course details.
+        Start your ODR journey today!
+      </p>
+    </div>
+    <form className='flex flex-col gap-2.5 items-center max-sm:w-full'>
+      <div className='flex flex-row flex-wrap gap-8 w-full max-sm:flex-col max-sm:gap-2'>
+        <input type='text' placeholder='Name' className='w-[22%] border-b border-[#C3C3C3] pb-2 bg-transparent max-sm:w-[100%]'></input>
+        <input type='text' placeholder='Phone Number' className='w-[22%] border-b border-[#C3C3C3] pb-2 bg-transparent max-sm:w-[100%]'></input>
+        <input type='text' placeholder='Email' className='w-[22%] border-b border-[#C3C3C3] pb-2 bg-transparent max-sm:w-[100%]'></input>
+        <input type='text' placeholder='Any Questions ?' className='w-[22%] border-b border-[#C3C3C3] pb-2 bg-transparent max-sm:w-[100%]'></input>
       </div>
-    </section>
+      <Button type='submit' className='custom-btn-primary relative text-center mt-4'>SUBMIT</Button>
+    </form>
+  </div>
   );
 } 

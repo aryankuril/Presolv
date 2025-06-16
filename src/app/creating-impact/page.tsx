@@ -73,13 +73,13 @@ export default function CreatingImpact() {
   return (
     <main>
       <section className="relative min-h-screen overflow-hidden">
-        <div className="container flex flex-col items-center justify-center mt-20 py-10 px-30 max-sm:px-10 max-sm:py-10 max-sm:mt-10">
+      <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
           <h2 className='text-center'>Real Experience, Real Impact</h2>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
 
         <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
-
+        <h2 className='text-center'>Event and Workshops</h2>
           <ImpactImageCarousel
             items={ImageGallery}
             scrollDelay={2000}
@@ -89,7 +89,7 @@ export default function CreatingImpact() {
           />
         </div>
 
-        <div className="container flex flex-col items-center justify-center py-20 px-30 max-sm:px-5 max-sm:py-10">
+        <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
           <h2 className='text-center'>Insights from Industry Leaders</h2>
           <div className="grid grid-cols-3 gap-10 py-10 max-sm:grid-cols-1">
             <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">

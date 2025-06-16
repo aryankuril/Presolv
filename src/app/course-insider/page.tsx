@@ -6,6 +6,7 @@ import React from 'react';
 import Accordion from '../components/Accordion';
 import Button from '../components/Button';
 import { useRouter } from 'next/navigation';
+import ContactForm from '../components/ContactForm';
 
 const modules = [
   {
@@ -166,7 +167,7 @@ export default function CourseInsiderPage()  {
 
       <div className='container  relative grid grid-cols-2 px-50 py-10 gap-10 mt-5 max-sm:grid-cols-1 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
 
-          <div className='flex flex-col sticky top-20 h-fit max-h-[calc(300vh-80px)] justify-center items-center text-center'>
+          <div className='flex flex-col text-left sticky top-20 h-fit max-h-[calc(300vh-80px)] justify-center items-center'>
             <h2>
               What is my return on investment?
             </h2>
@@ -179,7 +180,7 @@ export default function CourseInsiderPage()  {
 
           <div className='flex flex-col gap-20 investment-card relative'>
             {/* Card1 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-20 sm-top-50 z-10 max-sm:top-40'>
+            <div className='return-investment flex flex-col gap-5 sticky top-20 sm-top-50 z-10 max-sm:top-45'>
               <h4 className='text-[#FBB04C]'>
                 Are You a Learner/Fresher Student?
               </h4>
@@ -222,7 +223,7 @@ export default function CourseInsiderPage()  {
             </div>
 
             {/* Card2 */}
-            <div className='return-investment flex flex-col gap-5 sticky top-40 z-20 max-sm:top-52'>
+            <div className='return-investment flex flex-col gap-5 sticky top-40 z-20 max-sm:top-58'>
               <h4 className='text-[#FBB04C]'>
                 Are You a Legal Professional/Access-to-Justice Advocate?
               </h4>
@@ -309,7 +310,7 @@ export default function CourseInsiderPage()  {
           </div>
         </div>
 
-        <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
+        {/* <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
         <div>
           <h2 className='text-center'>
             Have Questions? We&apos;re Here to Help!
@@ -328,7 +329,8 @@ export default function CourseInsiderPage()  {
           </div>
           <Button type='submit' className='custom-btn-primary relative text-center mt-4'>SUBMIT</Button>
         </form>
-      </div>
+      </div> */}
+      <ContactForm />
 
     </main>
   );

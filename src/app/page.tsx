@@ -40,9 +40,8 @@ export default function Home() {
     }
   ];
   return (
-    <main>
-      <section className="relative min-h-screen overflow-hidden">
-
+    <main className="flex flex-col ">
+      <section className="flex flex-col relative overflow-hidden ">
         <div className="container hero-section relative mx-auto px-4 z-10 h-[567px] max-sm:h-[50vh] content-center">
           <AnimatedBackground />
           <h1 className="hero-section-title text-center mb-4 animate-fade-in text-5xl md:text-6xl lg:text-7xl">
@@ -65,7 +64,7 @@ export default function Home() {
         </div>
 
         {/* Card Carousel */}
-        <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-5">
+        <div className="container relative mx-auto py-12 px-4 md:px-8 lg:px-20 max-sm:px-5 max-sm:py-5">
           <CardCarousel
             cards={cards}
             showNavigation={true}
@@ -84,12 +83,17 @@ export default function Home() {
           />
         </div>
         {/* Inside the Course */}
-        <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10 ">
+        <div className='container py-15 px-15 flex flex-col items-center justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
           <h2 className="text-white text-center mb-4 text-3xl md:text-4xl">Inside the Course</h2>
-          <p className="text-white text-center mb-10 text-lg md:text-xl">
+          <p className="text-white text-center mb-6 text-lg md:text-xl">
             Developed by Presolv360 in collaboration with industry experts, this online course offers a dynamic, tech-driven learning experience. Participants explore the evolution from ADR to ODR through real-world case studies,
             engage in masterclasses by leading professionals, and experience an ADR Centre in Virtual Reality. The course includes skill-building sessions in AI-negotiation, e-mediation, and e-arbitration while emphasizing digital communication and ethical considerations in ODR.
           </p>
+          <div className="flex justify-center">
+            <Button onClick={() => router.push('/course-insider')}>
+              EXPLORE MORE
+            </Button>
+          </div>
         </div>
       </section>
     </main>

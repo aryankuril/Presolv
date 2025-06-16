@@ -101,12 +101,14 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
               <h2 className="text-center mb-0 text-4xl font-bold">{title}</h2>
             </div>
           )}
-          <div className="container h-full flex items-center justify-center">
+<div className="container h-full flex flex-col items-center justify-center mx-auto px-4">
+
             {/* Main content area */}
-            <div className="flex h-full items-start justify-center px-4 py-10 md:px-8 lg:px-16 w-full max-w-6xl max-sm:py-2">
+            <div className="flex h-full items-start justify-center mb-20 px-4 py-10 md:px-8 lg:px-16 w-full max-w-6xl max-sm:py-2">
+
               <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-25 max-w-6xl mx-auto w-full max-sm:gap-4">
                 {/* Left side - Card display that matches the screenshot */}
-                <div className="col-span-1 md:col-span-5 lg:col-span-4 flex justify-center">
+                <div className="col-span-1 md:col-span-5 lg:col-span-4 flex justify-center items-center">
                   <div className="relative max-sm:w-[250px] max-sm:h-[250px] sm:w-[380px] sm:h-[300px]">
                     {/* Shadow cards (positioned behind main card) */}
                     {/* <div className="absolute top-0 left-4 w-full h-full" style={{ zIndex: 1 }}>
@@ -149,7 +151,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
                 </div>
 
                 {/* Right side content */}
-                <div className="col-span-1 md:col-span-7 lg:col-span-8 flex flex-col">
+                <div className="col-span-1 md:col-span-7 lg:col-span-8 flex flex-col items-center md:items-start">
                   {modules.map((module, idx) => {
                     const isActive = idx === activeIndex;
                     return (
@@ -178,8 +180,9 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
               </div>
             </div>
 
-            {/* Progress bar with dynamic gradient */}
-            <div className="course-module-progress">
+           {/* Progress bar with dynamic gradient */}
+<div className="course-module-progress w-full max-w-screen-xl px-4 mx-auto mt-40 md:mt-12">
+
               <div className="course-module-progress-track">
                 <div
                   className="course-module-progress-bar"

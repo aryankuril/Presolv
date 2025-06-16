@@ -10,6 +10,7 @@
     "clean": "npx rimraf .next"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@types/nodemailer": "^6.4.17",
     "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",

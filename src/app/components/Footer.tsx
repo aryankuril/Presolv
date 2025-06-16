@@ -51,7 +51,7 @@ export default function Footer() {
       
       {/* Footer Content */}
       <div className="relative py-12 px-5 md:px-20 lg:px-[82px]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Contact Information */}
             <div>

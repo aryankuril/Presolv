@@ -3,6 +3,7 @@ import { useState } from 'react';
 import React from 'react';
 import Accordion from '../components/Accordion';
 import Button from '../components/Button';
+import ContactForm from '../components/ContactForm';
 
 
 export default function FAQPage() {
@@ -112,7 +113,7 @@ export default function FAQPage() {
         )}
       </div>
 
-      <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
+      {/* <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
         <div>
           <h2 className='text-center'>
             Have Questions? We&apos;re Here to Help!
@@ -131,7 +132,8 @@ export default function FAQPage() {
           </div>
           <Button type='submit' className='custom-btn-primary relative text-center mt-4'>SUBMIT</Button>
         </form>
-      </div>
+      </div> */}
+      <ContactForm />
 
     </section>
   );
