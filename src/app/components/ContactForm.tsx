@@ -50,11 +50,11 @@ export default function ContactForm() {
     <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
     <div>
       <h2 className='text-center'>
-        Have Questions? We'll re Here to Help!
+      Have Questions? We&#39;re Here to Help!
       </h2>
       <p className='text-center pt-5'>
-        Share your name and phone number, and we'll reach out with all the course details.
-        Start your ODR journey today!
+      Share your name and phone number, and we&#39;ll reach out with all the course details.
+      Start your ODR journey today!
       </p>
     </div>
     <form onSubmit={handleSubmit} className='flex flex-col gap-2.5 items-center max-sm:w-full'>
@@ -100,7 +100,7 @@ export default function ContactForm() {
       </Button>
       
       {submitStatus === 'success' && (
-        <p className="text-yellow-600 mt-2">Message sent successfully! We'll get back to you soon.</p>
+        <p className="text-yellow-600 mt-2"> Message sent successfully! We&#39;ll get back to you soon.</p>
       )}
       {submitStatus === 'error' && (
         <p className="text-red-600 mt-2">Failed to send message. Please try again later.</p>
