@@ -10,6 +10,7 @@
     "clean": "npx rimraf .next"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.17",
     "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
@@ -19,6 +20,7 @@
     "framer-motion": "^12.16.0",
     "lucide-react": "^0.503.0",
     "next": "15.2.5",
+    "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-firebase-hooks": "^5.1.1",

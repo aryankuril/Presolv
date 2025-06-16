@@ -91,23 +91,23 @@ const TestimonialCarousel = ({
     >
       {/* Navigation - left (up) */}
       <button
-        className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute left-[-3.5rem] max-sm:left-[-1.5rem] top-1/2 -translate-y-1/2 z-20"
+        className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute left-[-3.5rem] max-sm:left-[-1.5rem] top-1/2 -translate-y-1/2 z-20"
         onClick={handlePrev}
         aria-label="Previous slide"
         style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19 15L12 8L5 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
       {/* Navigation - right (down) */}
       <button
-        className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute right-[-3.5rem] max-sm:right-[-1.5rem] top-1/2 -translate-y-1/2 z-20"
+        className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute right-[-3.5rem] max-sm:right-[-1.5rem] top-1/2 -translate-y-1/2 z-20"
         onClick={handleNext}
         aria-label="Next slide"
         style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5 9L12 16L19 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
@@ -118,19 +118,19 @@ const TestimonialCarousel = ({
             style={getStackStyle(pos)}
             className="transition-all duration-500"
           >
-            <div className={`custom-card flex-col gap-y-8 sm:gap-y-12 lg:gap-y-20 w-full ${cardClassName}`}>  
-              <h6 className="mb-4">{testimonials[testimonialIdx].text}</h6>
+            <div className={`custom-card flex-col gap-y-4 sm:gap-y-12 lg:gap-y-10 w-full ${cardClassName}`}>  
+              <h6 className="mb-2">{testimonials[testimonialIdx].text}</h6>
               <p className="font-semibold text-blue-400">{testimonials[testimonialIdx].author}</p>
             </div>
           </div>
         ))}
       </div>
       {/* Pagination dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6">
         {testimonials.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${
               index === activeIndex ? 'bg-white' : 'bg-white/30'
             }`}
             onClick={() => setActiveIndex(index)}

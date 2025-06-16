@@ -84,7 +84,7 @@ export default function Home() {
           />
         </div>
         {/* Inside the Course */}
-        <div className="container relative mx-auto py-20 px-20 max-sm:px-10 max-sm:py-10 ">
+        <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10 ">
           <h2 className="text-white text-center mb-4 text-3xl md:text-4xl">Inside the Course</h2>
           <p className="text-white text-center mb-10 text-lg md:text-xl">
             Developed by Presolv360 in collaboration with industry experts, this online course offers a dynamic, tech-driven learning experience. Participants explore the evolution from ADR to ODR through real-world case studies,
