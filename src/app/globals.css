@@ -951,6 +951,21 @@ li{
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .course-module-progress-bar {
+    height: 2px !important;
+    border-radius: 9999px !important;
+    background: linear-gradient(90deg, #a259ff 0%, #6a82fb 100%) !important;
+    box-shadow: none !important;
+  }
+  .course-module-progress-track {
+    height: 2px !important;
+    border-radius: 9999px !important;
+    margin-bottom: 0.5rem !important;
+    background: rgba(255,255,255,0.08) !important;
+  }
+}
+
 /* Stacked Card Animation Styles */
 .stacked-card-container {
   position: relative;
