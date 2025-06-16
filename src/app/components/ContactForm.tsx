@@ -50,10 +50,10 @@ export default function ContactForm() {
     <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
     <div>
       <h2 className='text-center'>
-        Have Questions? We&apos;re Here to Help!
+        Have Questions? We'll re Here to Help!
       </h2>
       <p className='text-center pt-5'>
-        Share your name and phone number, and we&apos;ll reach out with all the course details.
+        Share your name and phone number, and we'll reach out with all the course details.
         Start your ODR journey today!
       </p>
     </div>
