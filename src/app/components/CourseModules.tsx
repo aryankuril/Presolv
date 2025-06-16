@@ -83,7 +83,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
       window.scrollTo({
         top: targetScroll,
         behavior: 'smooth'
-      });
+      }) ;
     }
   };
 
