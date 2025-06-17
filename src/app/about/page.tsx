@@ -174,7 +174,7 @@ export default function AboutPage() {
       </div>
 
       {/*Recognition*/}
-      <div className="container relative mx-auto py-20 px-20   max-sm:mt-10 max-sm:px-10 max-sm:py-10">
+      <div className="container relative mx-auto py-20 px-20   max-sm:mt-5 max-sm:px-10 max-sm:py-10">
         <h2 className="text-center mb-10">
           Recognition and Empanelment
         </h2>
