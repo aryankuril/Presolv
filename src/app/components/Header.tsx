@@ -94,7 +94,7 @@ export default function Header() {
             ) : (
               <Link 
                 href="/auth" 
-                className="hidden lg:flex items-center gap-2 px-6 py-3 bg-[#090909] border border-[#007AFF] rounded-[32px] text-white uppercase text-base shadow-[inset_1px_-1px_4.5px_0px_rgba(255,255,255,0.1)] hover:bg-[#007AFF]/10 transition-all duration-300"
+                className="hidden lg:flex items-center gap-2 px-6 py-3 bg-[#090909] border border-[#007AFF] rounded-[32px] text-white uppercase text-base shadow-[inset_1px_-1px_4.5px_0px_rgba(255,255,255,0.1)] hover:bg-[#007AFF]/10 hover:text-[#FBB04C] hover:border-[#FBB04C] transition-all duration-300"
               >
                 <span>login/register</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

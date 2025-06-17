@@ -83,15 +83,16 @@ const TestimonialCarousel = ({
   const stackIndices = getStackIndices();
 
   return (
-    <div
-      className="container relative w-full py-10 overflow-visible flex flex-col items-center"
+ <div className="container relative max-sm:mt-10 mx-auto py-10 px-4 sm:px-6 lg:px-8 max-sm:py-1"
+
+
       ref={containerRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Navigation - left (up) */}
       <button
-        className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute left-[-3.5rem] max-sm:left-[-1.5rem] top-1/2 -translate-y-1/2 z-20"
+        className="w-8 h-8 sm:w-10 sm:h-10 left-[-1rem]  flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute  max-sm:left-[-1rem] top-1/2 -translate-y-1/2 z-20"
         onClick={handlePrev}
         aria-label="Previous slide"
         style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}
@@ -102,7 +103,7 @@ const TestimonialCarousel = ({
       </button>
       {/* Navigation - right (down) */}
       <button
-        className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute right-[-3.5rem] max-sm:right-[-1.5rem] top-1/2 -translate-y-1/2 z-20"
+        className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-gradient-to-b from-[#007AFF] to-[rgba(255,255,255,0.5)] text-white hover:opacity-90 transition-opacity duration-200 absolute right-[-1rem] max-sm:right-[-1rem] top-1/2 -translate-y-1/2 z-20"
         onClick={handleNext}
         aria-label="Next slide"
         style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}

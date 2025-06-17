@@ -47,7 +47,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
+    <div className='container odr-course-bg ellipse-bg py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-20 max-sm:mt-10 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
     <div>
       <h2 className='text-center'>
       Have Questions? We&#39;re Here to Help!

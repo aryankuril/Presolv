@@ -137,6 +137,7 @@ export default function AuthPage() {
       {/* Form Section */}
       <div className="w-full max-w-[480px] p-8 flex flex-col items-center justify-center bg-transparent">
         <div className="flex justify-between items-center mb-12 w-full">
+
           <div className="flex gap-6">
             <button
               onClick={() => {
@@ -148,10 +149,12 @@ export default function AuthPage() {
                 activeTab === "login"
                   ? "bg-[#FBB04C] text-black"
                   : "text-white hover:text-gray-300"
+
               }`}
             >
               Login
             </button>
+
             <button
               onClick={() => {
                 setActiveTab("signup");
@@ -162,6 +165,7 @@ export default function AuthPage() {
                 activeTab === "signup"
                   ? "bg-[#FBB04C] text-black"
                   : "text-white hover:text-gray-300"
+
               }`}
             >
               Signup
@@ -262,8 +266,10 @@ export default function AuthPage() {
                       Logging in...
                     </span>
                   ) : (
+
                     <span className="flex items-center gap-2 font-bold">
                       <strong>LOGIN</strong>
+
                     </span>
                   )}
                 </Button>
@@ -567,8 +573,10 @@ export default function AuthPage() {
                       Creating Account...
                     </span>
                   ) : (
+
                     <span className="flex items-center gap-2 font-bold">
                       <strong>GET STARTED</strong>
+
                     </span>
                   )}
                 </Button>

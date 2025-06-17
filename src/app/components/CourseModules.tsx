@@ -195,33 +195,57 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
 <div className="course-module-progress w-full max-w-screen-xl px-4 mx-auto mt-40 md:mt-12">
 
   {/* Mobile: Progress bar, number, title, and description */}
-  <div className="block md:hidden text-left py-2 mt-32">
-    {/* Progress bar */}
-    <div className="course-module-progress-track mb-2" style={{ height: '2px', borderRadius: '9999px', background: 'rgba(255,255,255,0.08)' }}>
-      <div
-        className="course-module-progress-bar"
-        style={{ width: `${scrollProgress}%`, height: '2px', borderRadius: '9999px', background: 'linear-gradient(90deg, #a259ff 0%, #6a82fb 100%)' }}
-      ></div>
-    </div>
-    {/* Number and title */}
-    <span className="text-gray-400 text-sm font-semibold">{String(activeIndex + 1).padStart(2, '0')}.</span>
-    <div className="text-white text-lg font-semibold leading-tight mb-1">{modules[activeIndex]?.title}</div>
-    {/* Description */}
-    <div className="text-gray-300 text-base mb-2">{modules[activeIndex]?.description}</div>
-    {/* Get Started button */}
-    <div className="mt-4">
-      <Link href="/auth">
-        <Button>GET STARTED</Button>
-      </Link>
-    </div>
+  <div className="block md:hidden text-left py-4 mt-20 space-y-3">
+  {/* Progress bar */}
+  <div
+    className="course-module-progress-track"
+    style={{
+      height: '2px',
+      borderRadius: '9999px',
+      background: 'rgba(255,255,255,0.08)',
+    }}
+  >
+    <div
+      className="course-module-progress-bar"
+      style={{
+        width: `${scrollProgress}%`,
+        height: '2px',
+        borderRadius: '9999px',
+        background: 'linear-gradient(90deg, #a259ff 0%, #6a82fb 100%)',
+      }}
+    ></div>
   </div>
+
+  {/* Module Number */}
+  <span className="text-gray-400 text-sm font-semibold block">
+    {String(activeIndex + 1).padStart(2, '0')}.
+  </span>
+
+  {/* Title */}
+  <div className="text-white text-lg font-semibold leading-tight tracking-tight">
+    {modules[activeIndex]?.title}
+  </div>
+
+  {/* Description */}
+  <div className="text-gray-300 text-base">
+    {modules[activeIndex]?.description}
+  </div>
+
+  {/* Button */}
+  <div className="mt-5">
+    <Link href="/auth">
+      <Button>GET STARTED</Button>
+    </Link>
+  </div>
+</div>
+
 
   {/* Desktop: Progress bar and module grid */}
   <div className="hidden md:block">
     <div className="course-module-progress-track">
       <div
         className="course-module-progress-bar"
-        style={{ width: `${scrollProgress}%` }}
+        style={{ width: `${scrollProgress}%`  }}
       ></div>
     </div>
     <div className="grid grid-cols-7 gap-4">
@@ -231,7 +255,7 @@ export default function CourseModules({ modules, title }: CourseModulesProps) {
           className="text-center cursor-pointer"
           onClick={() => handleModuleClick(idx)}
         >
-          <p className={`text-2xl font-bold ${activeIndex === idx ? 'text-white' : 'text-gray-500'}`}>{String(idx + 1).padStart(2, '0')}.</p>
+          <p className={`text-2xl   font-bold ${activeIndex === idx ? 'text-white' : 'text-gray-500'}`}>{String(idx + 1).padStart(2, '0')}.</p>
           <p className={`text-xs mt-1 ${activeIndex === idx ? 'text-white' : 'text-gray-500'}`}>Module</p>
         </div>
       ))}
