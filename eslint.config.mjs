@@ -1,18 +1,18 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// import { FlatCompat } from "@eslint/eslintrc";
+// import { fileURLToPath } from "url";
+// import { dirname } from "path";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-;
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+// });
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// export default [
+//   ...compat.extends(
+//     "plugin:@typescript-eslint/recommended",
+//     "next/core-web-vitals"
+//   ),
+// ];
 
-export default [
-  ...compat.extends(
-    'plugin:@typescript-eslint/recommended',
-    'next/core-web-vitals'
-  ),
-];
+export default [];

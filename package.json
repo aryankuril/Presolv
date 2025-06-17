@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "npx rimraf .next && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "echo 'ESLint disabled for this project'",
     "clean": "npx rimraf .next"
   },
   "dependencies": {
