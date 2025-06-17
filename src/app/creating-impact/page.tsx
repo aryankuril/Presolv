@@ -72,13 +72,13 @@ const testimonials = [
 export default function CreatingImpact() {
   return (
     <main>
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden"> 
       <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
           <h2 className='text-center'>Real Experience, Real Impact</h2>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
 
-        <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
+        <div className="container relative mt-20 max-sm:mt-10 mx-auto py-20 px-20 max-sm:px-5 max-sm:py-1">
         <h2 className='text-center'>Event and Workshops</h2>
           <ImpactImageCarousel
             items={ImageGallery}
@@ -89,9 +89,9 @@ export default function CreatingImpact() {
           />
         </div>
 
-        <div className='container  py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-5 mb-10 mx-auto max-sm:px-5 max-sm:py-10'>
+        <div className='container  py-15 px-15 flex flex-col items-center gap-9.5 justify-center mt-20 max-sm:mt-10 mb-10 mx-auto max-sm:px-5 max-sm:py-1'>
           <h2 className='text-center'>Insights from Industry Leaders</h2>
-          <div className="grid grid-cols-3 gap-10 py-10 max-sm:grid-cols-1">
+          <div className="grid grid-cols-3 gap-10 py-10 max-sm:py-1 max-sm:grid-cols-1">
             <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
               <Image src="/images/tanu-mehta.png" alt="Tanu Mehta" width={100} height={100} />
               <h4 className="font-bold uppercase mt-5 mb-5">MS. Tanu Mehta</h4>

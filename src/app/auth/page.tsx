@@ -231,7 +231,7 @@ export default function AuthPage() {
           <div className="flex gap-6 ">
             <button 
               onClick={() => setActiveTab('login')}
-              className={`px-8 py-2 rounded-full text-[14px] font-bold transition-colors ${
+              className={`px-8 py-2 rounded-full text-[16px] font-bold transition-colors ${
                 activeTab === 'login' 
                   ? 'bg-[#FBB04C] text-black' 
                   : 'text-white hover:text-gray-300'
@@ -241,7 +241,7 @@ export default function AuthPage() {
             </button>
             <button 
               onClick={() => setActiveTab('signup')}
-              className={`px-8 py-2 rounded-full text-[14px] font-bold  transition-colors ${
+              className={`px-8 py-2 rounded-full text-[16px] font-bold  transition-colors ${
                 activeTab === 'signup' 
                   ? 'bg-[#FBB04C] text-black' 
                   : 'text-white hover:text-gray-300'
@@ -321,8 +321,8 @@ export default function AuthPage() {
                      
                     </span>
                   ) : (
-                    <span className="flex items-center gap-2 font-bold">
-                    <strong>LOGIN</strong>
+                    <span className="flex items-center gap-2 ">
+                    LOGIN
                     
                     </span>
                     
@@ -466,8 +466,8 @@ export default function AuthPage() {
                       Creating Account...
                     </span>
                   ) : (
-                    <span className="flex items-center gap-2 font-bold">
-                    <strong>GET STARTED</strong>
+                    <span className="flex items-center gap-2 ">
+                    GET STARTED
              
                     </span>
                   )}
