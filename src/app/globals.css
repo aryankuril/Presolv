@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/FuturaMd-BT.woff2') format('woff2'),
+       url('/fonts/FuturaMd-BT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* Critical body styles */
 body {
   background: radial-gradient(43.27% 43.27% at 49.97% 44.98%, #111 0%, #090909 100%);
-  font-family: 'Futura BK BT';
+ font-family: 'FuturaBKBT', sans-serif;
 }
 
 /* Critical hero section title */
