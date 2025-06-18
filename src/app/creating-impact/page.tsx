@@ -94,7 +94,7 @@ export default function CreatingImpact() {
           <div className="grid grid-cols-3 gap-10 py-10 max-sm:py-1 max-sm:grid-cols-1">
             <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
               <Image src="/images/tanu-mehta.png" alt="Tanu Mehta" width={100} height={100} />
-              <h4 className="font-bold uppercase mt-5 mb-5">MS. Tanu Mehta</h4>
+              <h5 className="font-bold uppercase mt-5 mb-5">MS. Tanu Mehta</h5>
               <p className="mb-5">Presolv360&apos;s Course will not only help you move into the second level of engaging online,
                 but will give you the confidence to say yes to ODR</p>
               <div className="text-md text-black bg-[#FBB04C] rounded-full px-5 py-3 max-sm:text-sm max-sm:px-3 max-sm:py-2">
@@ -102,7 +102,7 @@ export default function CreatingImpact() {
             </div>
             <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
               <Image src="/images/justice-kannan.png" alt="Justic Kannan" width={100} height={100} />
-              <h4 className="font-bold mb-5 mt-5 uppercase">Justice K. Kannan</h4>
+              <h5 className="font-bold mb-5 mt-5 uppercase">Justice K. Kannan</h5>
               <p className="mb-5">ODR is a method of securing a dispute resolution at your own pace,
                 in the way you want, in the comfort that you desire </p>
               <div className="text-md text-black bg-[#FBB04C] rounded-full px-5 py-3 max-sm:text-sm max-sm:px-3 max-sm:py-2">
@@ -110,7 +110,7 @@ export default function CreatingImpact() {
             </div>
             <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
               <Image src="/images/ankit-sahani.png" alt="Ankit Sahni" width={100} height={100} />
-              <h4 className="mb-5 mt-5 font-bold uppercase">Mr Ankit Sahni</h4>
+              <h5 className="mb-5 mt-5 font-bold uppercase">Mr Ankit Sahni</h5>
               <p className="mb-5">Presolv360&apos;s ODR course is a game-changer in the field,
                 blending theoretical knowledge with practical, hands-on experience </p>
               <div className="text-md text-black bg-[#FBB04C] rounded-full px-5 py-3 max-sm:text-sm max-sm:px-3 max-sm:py-2"> IP & Technology Law</div>

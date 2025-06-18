@@ -107,7 +107,7 @@ export default function Footer() {
           {/* Disclaimer */}
           <div className='mt-12'>
             <h4 className='text-[#FBB04C] text-lg font-semibold mb-4'>Disclaimer</h4>
-            <h6 className='text-white'>
+            <h6 className='text-white '>
               Presolv360 is not a law firm and does not provide legal advice. The use of any materials or service is not a substitute for legal advice. Only a legal practitioner can provide legal advice. A legal practitioner should be consulted for any legal advice or matter. No Attorney-Client relationship is created by use of these materials or services.
             </h6>
           </div>

@@ -57,8 +57,8 @@ export default function ContactForm() {
       Start your ODR journey today!
       </p>
     </div>
-    <form onSubmit={handleSubmit} className='flex flex-col gap-2.5 items-center max-sm:w-full'>
-      <div className='flex flex-row flex-wrap gap-8 w-full max-sm:flex-col max-sm:gap-2'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-2.5 ml-11 max-sm:ml-0 items-center max-sm:w-full'>
+      <div className='flex flex-row flex-wrap gap-4  w-[128%] max-sm:w-full max-sm:flex-col max-sm:gap-2'>
         <input 
           type='text' 
           placeholder='Name' 
@@ -88,7 +88,7 @@ export default function ContactForm() {
           placeholder='Any Questions ?' 
           value={questions}
           onChange={(e) => setQuestions(e.target.value)}
-          className='w-[22%] border-b border-[#C3C3C3] pb-2 bg-transparent max-sm:w-[100%]'
+          className='w-[24%] border-b border-[#C3C3C3] pb-2 bg-transparent max-sm:w-[100%]'
         />
       </div>
       <Button 

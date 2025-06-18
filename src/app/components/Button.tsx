@@ -24,9 +24,9 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const baseStyles = 'flex items-center justify-center gap-2 transition-all duration-200';
   const variantStyles = {
-    primary: 'custom-btn-primary !bg-[#007AFF] hover:!bg-white hover:!text-[#007AFF]',
-    secondary: 'bg-[#FBB04C] text-white hover:bg-[#f9950a]',
-    outline: 'border-2 border-[#007AFF] text-white hover:bg-[#007AFF]/10'
+    primary: 'custom-btn-primary ',
+    secondary: 'bg-[#FBB04C] text-white ',
+    outline: 'border-2 border-[#007AFF] text-white '
   };
   const sizeStyles = {
     sm: 'px-4 py-2 text-sm',

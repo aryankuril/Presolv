@@ -182,7 +182,7 @@ export default function CourseInsiderPage()  {
           <div className='flex flex-col gap-20 investment-card relative'>
             {/* Card1 */}
             <div className='return-investment flex flex-col gap-5 sticky top-20 sm-top-50 z-10 max-sm:top-45'>
-              <h4 className='text-[#FBB04C]'>
+              <h4 className='text-[#FBB04C] '>
                 Are You a Learner/Fresher Student?
               </h4>
               <Accordion
