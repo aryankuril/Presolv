@@ -117,7 +117,7 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-start justify-center bg-[#0A0A0A] py-8 px-2 gap-8">
+    <div className="min-h-screen flex flex-col md:flex-row items-start justify-center bg-[#0A0A0A] px-2 gap-8">
       {/* Video Section - hidden on mobile */}
       <div className="hidden md:flex w-full max-w-3xl flex-col items-center relative min-h-[300px] mt-15">
         <video
@@ -267,8 +267,8 @@ export default function AuthPage() {
                     </span>
                   ) : (
 
-                    <span className="flex items-center gap-2 font-bold">
-                      <strong>LOGIN</strong>
+                    <span className="flex items-center gap-2 ">
+                     LOGIN
 
                     </span>
                   )}
@@ -574,8 +574,8 @@ export default function AuthPage() {
                     </span>
                   ) : (
 
-                    <span className="flex items-center gap-2 font-bold">
-                      <strong>GET STARTED</strong>
+                    <span className="flex items-center gap-2 ">
+                     GET STARTED
 
                     </span>
                   )}
