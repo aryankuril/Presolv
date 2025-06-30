@@ -36,7 +36,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative mt-40 max-sm:mt-20 border-t-1 border-[#3B3B3B]" style={{ letterSpacing: '0px' }}>
+    <footer style={{ background: "radial-gradient(43.27% 43.27% at 49.97% 44.98%, #111 0%, #090909 100%)" }} 
+    className="relative  border-t-1 border-[#3B3B3B]" >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
