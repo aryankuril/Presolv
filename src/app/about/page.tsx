@@ -126,10 +126,10 @@ export default function AboutPage() {
   }));
 
   return (
-    <section>
-      <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
+    <section style={{ background: "radial-gradient(43.27% 43.27% at 49.97% 44.98%, #111 0%, #090909 100%)" }}>
+      <div  className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
         {/*title*/}
-        <h2 className="text-center mb-10">
+        <h2 className="text-center mb-10 text-[#FFF]">
           About Presolv360
         </h2>
 
@@ -154,7 +154,7 @@ export default function AboutPage() {
         </div>
 
         {/*about presolv360*/}
-        <p className="text-center mb-10">
+        <p className="text-center mb-10 text-[#FFF]">
           Presolv360 simplifies dispute resolution through research, innovation, technology, and empathy.
           Its cloud-based ODR platform operates 24x7 in multiple languages, accessible even via smartphones.
           Equipped with digital communication tools, smart case management, automation, blockchain integration, and e-signing, it streamlines the resolution process.
@@ -164,7 +164,7 @@ export default function AboutPage() {
 
         
           {/*button*/}
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <Link href="/auth">
               <Button>
                 BE A PART OF OUR TEAM
@@ -174,7 +174,7 @@ export default function AboutPage() {
       </div>
 
       {/*Recognition*/}
-      <div className="container relative mx-auto py-20 px-20   max-sm:mt-5 max-sm:px-10 max-sm:py-10">
+      <div className="container relative mx-auto py-20 px-20 text-[#FFF]  max-sm:mt-5 max-sm:px-10 max-sm:py-10">
         <h2 className="text-center mb-10">
           Recognition and Empanelment
         </h2>
@@ -199,7 +199,7 @@ export default function AboutPage() {
       </div>
 
       {/*media*/}
-      <div className='container relative mx-auto  px-20 mt-15 max-sm:mt-10 max-sm:px-10 max-sm:py-10'>
+      <div className='container relative  mx-auto text-[#FFF]  px-20 mt-15 max-sm:mt-10 max-sm:px-10 max-sm:py-10'>
         <h2 className="text-center mb-10">
           Presolv360 in the media
         </h2>

@@ -41,7 +41,8 @@ export default function Home() {
   ];
   return (
     <main className="flex flex-col ">
-      <section className="flex flex-col relative overflow-hidden ">
+      <section  style={{ background: "radial-gradient(43.27% 43.27% at 49.97% 44.98%, #111 0%, #090909 100%)" }} 
+      className="flex flex-col relative overflow-hidden ">
         <div className="container hero-section relative mx-auto px-4 z-10 h-[567px] max-sm:h-[50vh] content-center">
           <AnimatedBackground />
           <h1 className="hero-section-title text-center mb-4 animate-fade-in text-5xl md:text-6xl lg:text-7xl">
@@ -83,7 +84,7 @@ export default function Home() {
           />
         </div>
         {/* Inside the Course */}
-        <div className='container  px-15 flex flex-col items-center justify-center py-1 mt-30 max-sm:mt-20  mx-auto max-sm:px-5 max-sm:py-1'>
+        <div className='container lg:mb-40 mb-20 px-15 flex flex-col items-center justify-center py-1 mt-30 max-sm:mt-20  mx-auto max-sm:px-5 max-sm:py-1'>
           <h2 className="text-white text-center mb-4 text-3xl md:text-4xl">Inside the Course</h2>
           <p className="text-white text-center mb-6 text-lg md:text-xl">
             Developed by Presolv360 in collaboration with industry experts, this online course offers a dynamic, tech-driven learning experience. Participants explore the evolution from ADR to ODR through real-world case studies,

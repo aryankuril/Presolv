@@ -1,11 +1,11 @@
- import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { AuthProvider } from "./contexts/AuthContext";
 import localFont from 'next/font/local';
+import ClientLayout from "./components/ClientLayout";
 
-// Load Futura font files
 const futuraBold = localFont({
   src: '../../public/fonts/Futura-Bold.woff2',
   variable: '--font-futura-bold',
@@ -33,30 +33,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://firebaseapp.com" />
-        <link rel="dns-prefetch" href="https://firebaseapp.com" />
-      </head>
-      <body className={`
+      <body
+        className={`
         ${futuraBold.variable} 
         ${futuraHvBT.variable}
         ${futuraMdBT.variable}
         ${futuraBkBT.variable}
-        antialiased min-h-screen bg-[#0A0A0A] text-white
-      `}>
+        antialiased min-h-screen 
+      `}
+      >
         <AuthProvider>
-          <div className="relative flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </AuthProvider>
       </body>
     </html>

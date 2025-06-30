@@ -72,14 +72,15 @@ const testimonials = [
 export default function CreatingImpact() {
   return (
     <main>
-      <section className="relative min-h-screen overflow-hidden"> 
-      <div className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
-          <h2 className='text-center'>Real Experience, Real Impact</h2>
+      <section style={{ background: "radial-gradient(43.27% 43.27% at 49.97% 44.98%, #111 0%, #090909 100%)" }}
+      className="relative min-h-screen overflow-hidden"> 
+      <div  className="container relative mx-auto py-20 px-20 max-sm:px-5 max-sm:py-10">
+          <h2 className='text-center text-[#FFF]'>Real Experience, Real Impact</h2>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
 
         <div className="container relative  max-sm:mt-10 mx-auto mt-8 px-20 max-sm:px-5 max-sm:py-1">
-        <h2 className='text-center'>Event and Workshops</h2>
+        <h2 className='text-center text-[#FFF]'>Event and Workshops</h2>
           <ImpactImageCarousel
             items={ImageGallery}
             scrollDelay={2000}
@@ -89,10 +90,10 @@ export default function CreatingImpact() {
           />
         </div>
 
-        <div className='container  px-15 flex flex-col items-center gap-9.5 justify-center mt-15 max-sm:mt-10  mx-auto max-sm:px-5 max-sm:py-1'>
-          <h2 className='text-center'>Insights from Industry Leaders</h2>
+        <div className='container lg:mb-40 mb-20  px-15 flex flex-col items-center gap-9.5 justify-center mt-15 max-sm:mt-10  mx-auto max-sm:px-5 max-sm:py-1'>
+          <h2 className='text-center text-[#FFF]'>Insights from Industry Leaders</h2>
           <div className="grid grid-cols-3 gap-10 py-10 max-sm:py-1 max-sm:grid-cols-1">
-            <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
+            <div className="team-card flex flex-col h-full flex-1 text-[#FFF] min-h-[400px]">
               <Image src="/images/tanu-mehta.png" alt="Tanu Mehta" width={100} height={100} />
               <h5 className="font-bold uppercase mt-5 mb-5">MS. Tanu Mehta</h5>
               <p className="mb-5">Presolv360&apos;s Course will not only help you move into the second level of engaging online,
@@ -100,7 +101,7 @@ export default function CreatingImpact() {
               <div className="text-md text-black bg-[#FBB04C] rounded-full px-5 py-3 max-sm:text-sm max-sm:px-3 max-sm:py-2">
                 Legal Counsel, Mediator, Conciliator</div>
             </div>
-            <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
+            <div className="team-card flex flex-col h-full flex-1 min-h-[400px] text-[#FFF]">
               <Image src="/images/justice-kannan.png" alt="Justic Kannan" width={100} height={100} />
               <h5 className="font-bold mb-5 mt-5 uppercase">Justice K. Kannan</h5>
               <p className="mb-5">ODR is a method of securing a dispute resolution at your own pace,
@@ -108,7 +109,7 @@ export default function CreatingImpact() {
               <div className="text-md text-black bg-[#FBB04C] rounded-full px-5 py-3 max-sm:text-sm max-sm:px-3 max-sm:py-2">
                 Judge (Retd.) Punjab & Haryana High Court </div>
             </div>
-            <div className="team-card flex flex-col h-full flex-1 min-h-[400px]">
+            <div className="team-card flex flex-col h-full flex-1 min-h-[400px] text-[#FFF]">
               <Image src="/images/ankit-sahani.png" alt="Ankit Sahni" width={100} height={100} />
               <h5 className="mb-5 mt-5 font-bold uppercase">Mr Ankit Sahni</h5>
               <p className="mb-5">Presolv360&apos;s ODR course is a game-changer in the field,
