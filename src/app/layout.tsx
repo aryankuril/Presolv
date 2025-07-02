@@ -3,27 +3,27 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { AuthProvider } from "./contexts/AuthContext";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import ClientLayout from "./components/ClientLayout";
 
 const futuraBold = localFont({
-  src: '../../public/fonts/Futura-Bold.woff2',
-  variable: '--font-futura-bold',
+  src: "../../public/fonts/Futura-Bold.woff2",
+  variable: "--font-futura-bold",
 });
 
 const futuraHvBT = localFont({
-  src: '../../public/fonts/FuturaHv-BT.woff2',
-  variable: '--font-futura-hv-bt',
+  src: "../../public/fonts/FuturaHv-BT.woff2",
+  variable: "--font-futura-hv-bt",
 });
 
 const futuraMdBT = localFont({
-  src: '../../public/fonts/FuturaMd-BT.woff2',
-  variable: '--font-futura-md-bt',
+  src: "../../public/fonts/FuturaMd-BT.woff2",
+  variable: "--font-futura-md-bt",
 });
 
 const futuraBkBT = localFont({
-  src: '../../public/fonts/FuturaBK-BT.woff2',
-  variable: '--font-futura-bk-bt',
+  src: "../../public/fonts/FuturaBK-BT.woff2",
+  variable: "--font-futura-bk-bt",
 });
 
 export const metadata: Metadata = {
@@ -39,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        cz-shortcut-listen="true"
         className={`
         ${futuraBold.variable} 
         ${futuraHvBT.variable}
@@ -48,9 +49,7 @@ export default function RootLayout({
       `}
       >
         <AuthProvider>
-          <ClientLayout>
-            {children}
-          </ClientLayout>
+          <ClientLayout>{children}</ClientLayout>
         </AuthProvider>
       </body>
     </html>
