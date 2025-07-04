@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from './Button';
 import { useRouter } from "next/navigation";
+import { Avatar, Typography, IconButton, Button as MUIButton } from "@mui/material";
 
 const Course = ({ username = "User" }) => {
   const [darkMode, setDarkMode] = useState(true);
@@ -129,15 +130,22 @@ const Course = ({ username = "User" }) => {
    
    
        {/* Profile */}
-       <div
-         className={`w-8 h-8 rounded-full border flex items-center justify-center cursor-pointer 
-         ${darkMode ? "border-[#007AFF]" : "border-yellow-400"}`}
-         onClick={() => router.push("/profile")}
-       >
-         <span className="text-sm font-bold">
-           {username?.charAt(0)?.toUpperCase() || "U"}
-         </span>
-       </div>
+                {/* Profile Avatar */}
+          <Avatar
+  sx={{
+    backgroundColor: 'transparent',
+    border: `1px solid ${darkMode ? "#007AFF" : "#FBB04C"}`,
+    cursor: "pointer",
+    width: 32,
+    height: 32,
+    fontSize: 14,
+    fontWeight: "bold",
+    color: darkMode ? "#007AFF" : "#FBB04C",
+  }}
+  onClick={() => router.push("/profile")}
+>
+  {username?.charAt(0)?.toUpperCase() || "U"}
+</Avatar>
    
      </div>
    </div>
@@ -147,12 +155,25 @@ const Course = ({ username = "User" }) => {
         {/* Left Side */}
         <div className="">
           {/* Heading */}
-          <h4 className="text-[26px] w-full font-bold md:text-3xl leading-snug mb-4">
-            Mastering Online Dispute Resolution: <br /> Navigating Disputes In The Digital Age
-          </h4>
+          <Typography
+  variant="h4"
+  className="text-center md:text-left capitalize"
+  style={{
+  
+    fontSize: "36px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "40px",
+  }}
+>
+  Mastering Online Dispute Resolution:
+  <br />
+  Navigating Disputes In The Digital Age
+</Typography>
+
 
           {/* Rating */}
-          <div className="flex items-center space-x-1 mb-2">
+          <div className="flex items-center space-x-1 mb-3 mt-3">
             <span className="text-yellow-400">★</span>
             <span className="text-yellow-400">★</span>
             <span className="text-yellow-400">★</span>
@@ -166,12 +187,24 @@ const Course = ({ username = "User" }) => {
           </div>
 
           {/* Description */}
-          <h6 className="text-gray-200 text-sm leading-relaxed mb-5 max-w-2xl">
-            This course propels you to the forefront of modern dispute resolution and equips its participants all skills and tools necessary to understand, enhance, and master their expertise in ODR.
-          </h6>
+         <Typography
+  variant="h6"
+  className="mb-5 max-w-2xl"
+  style={{
+    fontSize: "16px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "23px",
+    letterSpacing: "0.48px",
+  }}
+>
+  This course propels you to the forefront of modern dispute resolution and equips its participants with all the skills and tools necessary to understand, enhance, and master their expertise in ODR.
+</Typography>
+
+
 
           {/* Bottom Info Icons */}
-         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-200 ">
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-200 mt-5 ">
   
   <div className="flex items-center space-x-2 ">
     <Image src="/images/tick.png" alt="Module Icon" width={30} height={29} />
@@ -212,13 +245,28 @@ const Course = ({ username = "User" }) => {
 
         {/* Modules Section */}
         <div className="md:w-2/3">
-          <h3 className="text-xl md:text-2xl  mb-6">Course Modules</h3>
+         <Typography
+  variant="h5"
+  className="mb-6"
+  style={{
+    color: "#FFF",
+    fontSize: "36px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "47px",
+    textTransform: "capitalize",
+  }}
+>
+  Course Modules
+</Typography>
+
+
           <div className="space-y-4">
 
             {modules.map((mod, index) => (
-              <div key={mod.id} className={`flex justify-between items-center p-4 rounded-lg border-none  `}>
+              <div key={mod.id} className={`flex justify-between items-center p-4 rounded-lg border-none mt-0 lg:mt-8 `}>
                 <div className="flex items-start space-x-4">
-                  <span className="text-blue-400  mt-8 font-semibold">{index + 1}.</span>
+                  <span className="text-white  mt-8 font-semibold">{index + 1}.</span>
                   <div>
                     {mod.free ? (
                   <button className="flex justify-center items-center gap-[18px] flex-shrink-0 w-[92px] h-[23px] px-[9px] py-[3px] rounded-[15px] bg-[#007AFF] text-white text-xs shadow-[inset_0px_6px_4px_0px_rgba(255,255,255,0.25)] hover:bg-blue-600 transition mb-1 animate-[growRightPulse_2s_ease-in-out_infinite]">
@@ -265,15 +313,51 @@ const Course = ({ username = "User" }) => {
 
         {/* Case Alerts Section */}
         <div className="md:w-1/3">
-          <h3 className="text-xl md:text-2xl  mb-6">Case Alerts</h3>
+   <Typography
+  variant="h5"
+  className="mb-6"
+  style={{
+    color: "#FFF",
+    fontSize: "36px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "47px",
+    textTransform: "capitalize",
+  }}
+>
+  Case Alerts
+</Typography>
+
+
 
            <div className="space-y-4 max-h-80  pr-2 mt-0 lg:mt-12">
             {caseAlerts.map(alert => (
               <div key={alert.id} className="flex items-start space-x-4 p-3 rounded-lg border border-none">
-                <Image src={alert.img} alt="Case Image" width={114} height={76} className="rounded" />
+                <Image src={alert.img} alt="Case Image" width={180} height={76} className="rounded" />
                 <div>
                   <h6 className="text-sm mb-2">{alert.text}</h6>
-                  <button className="text-[#F9950A] text-[16px] underline">View Case</button>
+                  <MUIButton  
+  color="warning" 
+  size="small" 
+  sx={{ 
+    color: '#F9950A',
+    fontSize: '13px',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    lineHeight: 'normal',
+    letterSpacing: '0.15px',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationSkipInk: 'auto',
+    textDecorationThickness: 'auto',
+    textUnderlineOffset: 'auto',
+    textUnderlinePosition: 'from-font',
+    '&:hover': { textDecoration: 'none' } 
+  }}
+>
+  View Case
+</MUIButton>
+
                 </div>
               </div>
             ))}
