@@ -157,10 +157,8 @@ const Course = ({ username = "User" }) => {
           {/* Heading */}
           <Typography
   variant="h4"
-  className="text-center md:text-left capitalize"
+  className=" md:text-left capitalize"
   style={{
-  
-    fontSize: "36px",
     fontStyle: "normal",
     fontWeight: 400,
     lineHeight: "40px",
