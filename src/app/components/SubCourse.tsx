@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from './Button';
 import { useRouter } from "next/navigation";
-
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { Avatar, Typography, IconButton, Button as MUIButton } from "@mui/material";
 
 const Course = ({ username = "User" }) => {
   const [darkMode, setDarkMode] = useState(true);
@@ -26,13 +26,13 @@ const Course = ({ username = "User" }) => {
 
   const completion = 50;
   const modules = [
-    { id: 1, title: "Unravelling the Past: ADR and ODR through History", duration: "21 Mins", status: true , free:true, },
-    { id: 2, title: "ODR in Action: Integrating ODR into Daily Life", duration: "21 Mins", status: true ,free:true,},
-    { id: 3, title: "The Art of Negotiation: Navigating Conflicts through ODR", duration: "21 Mins", status: true ,free:true, },
-    { id: 4, title: "Mediation Magic: Unlocking Resolution Possibilities", duration: "21 Mins", status: false ,free:true,},
-    { id: 5, title: "Virtual Resolution: Exploring ODR in the Arbitration Landscape", duration: "21 Mins", status: false,free:true,},
-    { id: 6, title: "Building Bridges, Not Walls: The Digital Toolbox", duration: "21 Mins", status: false,free:true,},
-    { id: 7, title: "Embracing the Future: Innovations in ODR", duration: "21 Mins", status: false,free:true,},
+    { id: 1, title: "Unravelling the Past: ADR and ODR through History", duration: "21 Mins", status: true, free: true },
+    { id: 2, title: "ODR in Action: Integrating ODR into Daily Life", duration: "21 Mins", status: true, free: true },
+    { id: 3, title: "The Art of Negotiation: Navigating Conflicts through ODR", duration: "21 Mins", status: true, free: true },
+    { id: 4, title: "Mediation Magic: Unlocking Resolution Possibilities", duration: "21 Mins", status: false, free: true },
+    { id: 5, title: "Virtual Resolution: Exploring ODR in the Arbitration Landscape", duration: "21 Mins", status: false, free: true },
+    { id: 6, title: "Building Bridges, Not Walls: The Digital Toolbox", duration: "21 Mins", status: false, free: true },
+    { id: 7, title: "Embracing the Future: Innovations in ODR", duration: "21 Mins", status: false, free: true },
   ];
 
   const caseAlerts = [
@@ -42,40 +42,27 @@ const Course = ({ username = "User" }) => {
     { id: 4, text: "Unravelling the Past: ADR and ODR through History", img: "/images/case.png" },
     { id: 5, text: "Unravelling the Past: ADR and ODR through History", img: "/images/case.png" },
   ];
-  return (
 
-          <div className={`min-h-screen ${darkMode ? "dark-text" : "light-text"}`}>
-      
+  return (
+    <div className={`min-h-screen ${darkMode ? "dark-text" : "light-text"}`}>
       {/* Header */}
       <div className="containerr flex justify-between items-center w-full px-4 sm:px-6 py-3 bg-transparent flex-wrap">
-  
-  {/* Left Logo */}
-  <div 
-    className="flex items-center space-x-1 cursor-pointer mb-2 sm:mb-0" 
-    onClick={() => router.push("/")}
-  >
-    {darkMode ? (
-      <Image src="/images/logo.png" alt="Logo" width={140} height={70} className="w-auto h-8 sm:h-10 md:h-12" />
-    ) : (
-      <Image src="/images/logo-c.png" alt="Logo" width={140} height={70} className="w-auto h-8 sm:h-10 md:h-12" />
-    )}
-  </div>
+        
+        <div className="flex items-center space-x-1 cursor-pointer mb-2 sm:mb-0" onClick={() => router.push("/")}>
+          <Image src={darkMode ? "/images/logo.png" : "/images/logo-c.png"} alt="Logo" width={140} height={70} className="w-auto h-8 sm:h-10 md:h-12" />
+        </div>
 
-  {/* Right Icons */}
-  <div className="flex items-center space-x-4 sm:space-x-5 flex-wrap">
+        <div className="flex items-center space-x-4 sm:space-x-5 flex-wrap">
+          
+          {/* Home Icon */}
+          <div onClick={() => router.push("/")} className="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="none">
+              <path d="M29.25 12.99L17.01 0.75C16.49 0.23 15.8 -0.06 15.06 -0.06C14.32 -0.06 13.63 0.23 13.1 0.75L0.87 12.98C-0.21 14.07 -0.21 15.82 0.87 16.89C1.36 17.39 2.01 17.67 2.7 17.7H3.27V26.71C3.27 28.49 4.72 29.94 6.5 29.94H11.29C11.78 29.94 12.17 29.55 12.17 29.06V22C12.17 21.19 12.83 20.53 13.65 20.53H16.47C17.28 20.53 17.94 21.19 17.94 22V29.06C17.94 29.55 18.34 29.94 18.82 29.94H23.61C25.39 29.94 26.84 28.49 26.84 26.71V17.7H27.29C28.03 17.7 28.73 17.42 29.25 16.89C30.32 15.82 30.32 14.07 29.25 12.99Z" fill={darkMode ? "white" : "black"} />
+            </svg>
+          </div>
 
-    {/* Home Icon */}
-    <div onClick={() => router.push("/")} className="cursor-pointer">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="none">
-        <path 
-          d="M29.25 12.99L17.01 0.75C16.49 0.23 15.8 -0.06 15.06 -0.06C14.32 -0.06 13.63 0.23 13.1 0.75L0.87 12.98C-0.21 14.07 -0.21 15.82 0.87 16.89C1.36 17.39 2.01 17.67 2.7 17.7H3.27V26.71C3.27 28.49 4.72 29.94 6.5 29.94H11.29C11.78 29.94 12.17 29.55 12.17 29.06V22C12.17 21.19 12.83 20.53 13.65 20.53H16.47C17.28 20.53 17.94 21.19 17.94 22V29.06C17.94 29.55 18.34 29.94 18.82 29.94H23.61C25.39 29.94 26.84 28.49 26.84 26.71V17.7H27.29C28.03 17.7 28.73 17.42 29.25 16.89C30.32 15.82 30.32 14.07 29.25 12.99Z"
-          fill={darkMode ? "white" : "black"}
-        />
-      </svg>
-    </div>
-
-    {/* Dark Mode Toggle */}
-<div className="flex flex-col items-center sm:flex-row-reverse sm:items-center sm:space-x-reverse sm:space-x-2 space-y-1 sm:space-y-0">
+          {/* Dark Mode Switch */}
+          <div className="flex flex-col items-center sm:flex-row-reverse sm:items-center sm:space-x-reverse sm:space-x-2 space-y-1 sm:space-y-0">
   
   {/* Toggle Button with Smooth Circle Animation */}
   <button 
@@ -127,193 +114,185 @@ const Course = ({ username = "User" }) => {
 
 </div>
 
+          {/* Profile Avatar */}
+          <Avatar
+  sx={{
+    backgroundColor: 'transparent',
+    border: `1px solid ${darkMode ? "#007AFF" : "#FBB04C"}`,
+    cursor: "pointer",
+    width: 32,
+    height: 32,
+    fontSize: 14,
+    fontWeight: "bold",
+    color: darkMode ? "#007AFF" : "#FBB04C",
+  }}
+  onClick={() => router.push("/profile")}
+>
+  {username?.charAt(0)?.toUpperCase() || "U"}
+</Avatar>
 
 
-
-    {/* Profile */}
-    <div
-      className={`w-8 h-8 rounded-full border flex items-center justify-center cursor-pointer 
-      ${darkMode ? "border-[#007AFF]" : "border-yellow-400"}`}
-      onClick={() => router.push("/profile")}
-    >
-      <span className="text-sm font-bold">
-        {username?.charAt(0)?.toUpperCase() || "U"}
-      </span>
-    </div>
-
-  </div>
-</div>
-
-
-
-        {/* firstsection  */}
-    <div className="containerr lg:mt-10 mt-5 w-full max-w-3xl mx-auto rounded-2xl odr-course-bg ellipse-bg bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-start md:items-center px-8 py-8 text-white">
-
-        {/* Left Side */}
-        <div className="space-y-6 max-w-2xl">
-
-      <h4 className="text-2xl md:text-3xl leading-snug" >
-  Mastering Online Dispute Resolution: <br />
-  Navigating Disputes In The Digital Age
-</h4>
-
-
-        {/* Info Icons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-200  ">
-         
-         <div className="flex items-center space-x-2 ">
-           <Image src="/images/tick.png" alt="Module Icon" width={30} height={29} />
-           <h6>7 Modules</h6>
-         </div>
-       
-         <div className="flex items-center space-x-2">
-           <Image src="/images/price.png" alt="Certificate Icon" width={30} height={29} />
-           <h6>Certificate on completion</h6>
-         </div>
-       
-         <div className="flex items-center space-x-2">
-           <Image src="/images/book.png" alt="Chapters Icon" width={30} height={29} />
-           <h6>54 Chapters</h6>
-         </div>
-       
-         <div className="flex items-center space-x-2">
-           <Image src="/images/man.png" alt="Self Paced Icon" width={30} height={29} />
-           <h6>Self paced course</h6>
-         </div>
-       </div>
-
-        {/* Rating Prompt */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0 ">
-         <h5 className="text-white text-[36px] leading-[47px] font-normal capitalize" >
-  Loved The Course? Rate It!
-</h5>
-
-          <Button >
-            SUBMIT RATING 
-          </Button>
         </div>
-
-  
-   
-        </div>
-        {/* Right Side */}
-         <div className="lg:w-[230px] h-[140px] w-[180px] mt-5 md:-mt-40 lg:-mt-20 lg:mb-0 mb-5 lg:mr-20 mr-0">
-  
-  <CircularProgressbarWithChildren
-    value={completion}
-    strokeWidth={8}
-    styles={buildStyles({
-      pathColor: "#F9950A",
-      trailColor: "#334155",
-      textColor: "white",
-    })}
-  >
-    {/* Percentage Text */}
-   <div className="flex flex-col items-center justify-center scale-90">
-  <h3 className="text-white font-semibold text-base">{completion}%</h3>
-  <h5 className="text-gray-300 mt-0.5 text-xs">Course Completed</h5>
-</div>
-
-  </CircularProgressbarWithChildren>
-
-</div>
       </div>
-   
 
-    {/* second section  */}
-      <div className="containerr w-full rounded-2xl  p-6 md:p-10 text-white flex flex-col md:flex-row justify-between gap-10 ">
-
-        {/* Modules Section */}
-        <div className="md:w-2/3">
-          <h4 className="text-xl md:text-2xl  mb-6">Course Modules</h4>
-          <div className="space-y-4">
-
-            {modules.map((mod, index) => (
-              <div key={mod.id} className={`flex justify-between items-center p-4 rounded-lg border-none  `}>
-                <div className="flex items-start space-x-4">
-                  <span className="text-blue-400  mt-8 font-semibold">{index + 1}.</span>
-                  <div>
-
-                    
-                    <h5 className="text-sm md:text-base">{mod.title}</h5>
-                   <div className="flex items-center space-x-3 mt-1">
-  
-  <button className="text-[16px] text-[#F9950A]">
-    {mod.duration}
-  </button>
-
-  {mod.status ? (
-   <button className="flex justify-center items-center gap-2 flex-shrink-0 w-24 h-6 px-2 py-1 rounded-[15px] text-[#5EAB00] text-[16px] leading-none tracking-[0.15px] font-[400] font-[futura-hv-bt] border border-[#5EAB00]">
-  Completed
-</button>
+      {/* First Section */}
+      <div className="containerr lg:mt-10 mt-5 w-full max-w-3xl mx-auto rounded-2xl odr-course-bg ellipse-bg bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-start md:items-center px-8 py-8 text-white">
+        
+        <div className="space-y-6 max-w-2xl ">
+         <Typography
+  variant="h4"
+  className=" md:text-left capitalize"
+  style={{
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "47px",
+  }}
+>
+  Mastering Online Dispute Resolution:
+  <br />
+  Navigating Disputes In The Digital Age
+</Typography>
 
 
-  ) : (
-    <div className="flex items-center space-x-2">
-      {/* Unlock code here */}
-    </div>
-  )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-200 mb-10 mt-5">
+            <div className="flex items-center space-x-2"><Image src="/images/tick.png" alt="Module" width={30} height={29} /><h6>7 Modules</h6></div>
+            <div className="flex items-center space-x-2"><Image src="/images/price.png" alt="Certificate" width={30} height={29} /><h6>Certificate on completion</h6></div>
+            <div className="flex items-center space-x-2"><Image src="/images/book.png" alt="Chapters" width={30} height={29} /><h6>54 Chapters</h6></div>
+            <div className="flex items-center space-x-2"><Image src="/images/man.png" alt="Self Paced" width={30} height={29} /><h6>Self paced course</h6></div>
+          </div>
 
-</div>
-
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  {mod.free ? (
-                      <button className=""></button>
-                    ) : (
-                          <div className="flex items-center space-x-2">
-                    <button className=""></button>
-                    <Image src="/images/lock.png" alt="Lock Icon" width={14} height={14} />
-                  </div>
-                )}
-                {mod.free && (
-                  <Image src="/images/Arrow .svg" alt="Arrow Icon" width={12} height={12} />
-                )}
-              </div>
-            </div>
-          ))}
-       
-            <div className="mt-6">
-              <Button >
-                ENROLL NOW 
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0 gap-5">
+            <Typography variant="h5" className="text-white text-[36px] leading-[47px] font-normal capitalize">
+              Loved The Course? Rate It!
+            </Typography>
+            <Button >SUBMIT RATING</Button>
           </div>
         </div>
 
-        {/* Case Alerts Section */}
-        <div className="md:w-1/3">
-          <h4 className="text-xl md:text-2xl mb-6 ">Case Alerts</h4>
+        <div className="lg:w-[230px] h-[140px] w-[180px] mt-5 md:-mt-40 lg:-mt-20 lg:mb-0 mb-5 lg:mr-20 mr-0">
+          <CircularProgressbarWithChildren
+            value={completion}
+            strokeWidth={8}
+            styles={buildStyles({
+              pathColor: "#F9950A",
+              trailColor: "#334155",
+              textColor: "white",
+            })}
+          >
+            <div className="flex flex-col items-center justify-center scale-90">
+              <h3 className="text-white font-semibold text-base">{completion}%</h3>
+              <h5 className="text-gray-300 mt-0.5 text-xs">Course Completed</h5>
+            </div>
+          </CircularProgressbarWithChildren>
+        </div>
+      </div>
 
-          <div className="space-y-4 max-h-80  pr-2 mt-0 lg:mt-10">
+      {/* Second Section */}
+      <div className="containerr w-full rounded-2xl p-6 md:p-10 text-white flex flex-col md:flex-row justify-between gap-10">
+        
+        <div className="md:w-2/3">
+          <Typography variant="h4" className="text-xl md:text-2xl mb-6">Course Modules</Typography>
+          
+          {modules.map((mod, index) => (
+            <div key={mod.id} className="flex justify-between items-center p-4 rounded-lg mt-0 lg:mt-8">
+              <div className="flex items-start space-x-4">
+                <h6 className="text-white mt-2  font-semibold">{index + 1}.</h6>
+                <div>
+                  <h5 className="text-sm md:text-base">{mod.title}</h5>
+                  <div className="flex items-center space-x-3 mt-1">
+                   
+            <span
+    style={{
+      color: '#F9950A',
+      fontSize: '16px',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      lineHeight: 'normal',
+      letterSpacing: '0.15px',
+    }}
+  >
+    {mod.duration}
+  </span>
+
+              
+                {mod.status && (
+                <MUIButton 
+  variant="outlined" 
+  color="success" 
+  size="small"
+  sx={{
+    display: 'flex',
+    padding: '3px 15px',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '10px',
+    borderRadius: '17px',
+    border: '1px solid #5EAB00'
+  }}
+>
+  Completed
+</MUIButton>
+
+
+                )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                {mod.free && <Image src="/images/Arrow .svg" alt="Arrow" width={12} height={12} />}
+              </div>
+            </div>
+          ))}
+
+          <div className="mt-6">
+            <Button >ENROLL NOW</Button>
+          </div>
+        </div>
+
+        {/* Case Alerts */}
+        <div className="md:w-1/3">
+          <Typography variant="h4" className="text-xl md:text-2xl mb-6">Case Alerts</Typography>
+          <div className="space-y-4 max-h-80 pr-2 mt-0 lg:mt-10">
             {caseAlerts.map(alert => (
-              <div key={alert.id} className="flex items-start space-x-4 p-3 rounded-lg border border-none">
-                <Image src={alert.img} alt="Case Image" width={114} height={76} className="rounded" />
+              <div key={alert.id} className="flex items-start space-x-4 p-3 rounded-lg">
+                <Image src={alert.img} alt="Case" width={180} height={76} className="rounded" />
                 <div>
                   <h6 className="text-sm mb-2">{alert.text}</h6>
-                  <button className="text-[#F9950A] text-[16px] underline">View Case</button>
+                                  <MUIButton  
+  color="warning" 
+  size="small" 
+  sx={{ 
+    color: '#F9950A',
+    fontSize: '13px',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    lineHeight: 'normal',
+    letterSpacing: '0.15px',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationSkipInk: 'auto',
+    textDecorationThickness: 'auto',
+    textUnderlineOffset: 'auto',
+    textUnderlinePosition: 'from-font',
+    '&:hover': { textDecoration: 'none' } 
+  }}
+>
+  View Case
+</MUIButton>
+
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-70">
-            <Button >
-              VIEW ALL CASE ALERT 
-            </Button>
+          <div className="mt-80">
+            <Button >VIEW ALL CASE ALERT</Button>
           </div>
-  
-
+        </div>
       </div>
     </div>
+  );
+};
 
- </div>
-
-
-
-  )
-}
-
-export default Course
+export default Course;
